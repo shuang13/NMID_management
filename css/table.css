@@ -1,0 +1,18 @@
+#content table {
+    margin-top: 50px;
+    margin-left: 39px;
+    width: 965px;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    font-size: 18px;
+} 
+#content table th, td {
+    max-width: 140px;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 0px 14px 0 14px;
+    font-weight: normal;
+}
+#content table .operate a{
+    color: #06A2E9;
+}
