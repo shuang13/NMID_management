@@ -1,6 +1,5 @@
 #sidebar {
-    position: absolute;
-    height: 600px;
+    float: left;
     width: 210px;
     background: #313239;
     font-family: Adobe 黑体 Std;

@@ -3,8 +3,6 @@
     padding: 0;
 }
 body {
-    overflow: hidden;
-    background: #F9F9F9;
 }
 li {
     float: left;
@@ -15,7 +13,6 @@ a {
     color: #000;
 }
 #top-bar {
-    width: 100%;
     height: 60px;
     background: #313239;
     line-height: 60px;
