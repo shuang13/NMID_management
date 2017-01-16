@@ -1,0 +1,35 @@
+#content {
+    position: absolute;
+    padding-left: 210px;
+    width: 100%;
+    font-family: Adobe 黑体 Std;
+}
+#content .header{
+    padding-left: 39px;
+    width: 100%;
+    height: 72px;
+    border-bottom: 1px solid #ccc;
+    line-height: 72px;
+}
+#content .header p{
+    font-size: 24px;
+}
+#content .nav {
+    margin-top: 46px;
+    margin-left: 39px;
+    width: 965px;
+    height: 46px;
+    line-height: 46px;
+    border-top: 1px solid #E4E4E4;
+    background: url(../image/bg.png) 0 0 repeat-x;
+}
+#content .nav a {
+    display: block;
+    width: 100px;
+    height: 46px;
+    text-align: center;
+    font-size: 18px;
+}
+#content .nav .nav-active {
+    background: url(../image/bg-active.png) 0 0 repeat-x;
+}
