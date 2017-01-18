@@ -1,9 +1,6 @@
 #content table {
-    margin-top: 50px;
-    margin-left: 39px;
     padding-bottom: 139px;
-
-    width: 965px;
+    width: 1100px;
     border-top: 1px solid #ccc;
     font-size: 18px;
 } 
@@ -17,7 +14,12 @@
     border-bottom: 1px solid #ccc;
     padding: 0px 14px 0 14px;
     font-weight: normal;
+    text-align:left;
 }
-#content table .operate a{
+#content table .operate a, .state a{
+    color: #06A2E9;
+}
+#content table .state a{
+    display: block;
     color: #06A2E9;
 }

@@ -2,7 +2,6 @@
     float: left;
     width: 210px;
     background: #313239;
-    font-family: Adobe 黑体 Std;
 }
 .user-image {
     padding-top: 23px;
@@ -24,7 +23,6 @@
 .sidebar-nav li {
     border-left: 6px solid transparent;
 }
-
 .sidebar-nav a {
     display: block;
     width: 204px;

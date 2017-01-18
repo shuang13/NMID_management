@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/sidebar.css" />
     <link rel="stylesheet" href="css/page.css" />
-
-    <!-- 数据表格样式 -->
-    <link rel="stylesheet" href="css/table.css" />
     
-    <!-- 项目上传样式 -->
-    <link rel="stylesheet" href="css/project-upload.css" />
+    <script src="js/jquery.min.js"></script>
+
+    <!-- 文件上传按钮样式插件 -->
+    <script src="js/bootstrap-filestyle.min.js"></script>
+
 </head>
 <body>
     <!-- 顶栏 -->
@@ -26,52 +26,100 @@
             <li class="search"><i></i></li>
         </ul>
     </header>
-    <!-- 侧栏 -->
-    <div id="sidebar">
-        <div class="user-image">
-            <i></i>
-            <p class="name">张延伟</p>
-        </div>
-        <ul class="sidebar-nav">
-            <li class="user-setting">
-                <a href="##">
-                    <p><i></i>账户设置</p>
-                </a>
-            </li>
-            <li class="project-manage  active">
-                <a href="##">
-                    <p><i></i>项目管理</p>
-                </a>
-            </li>
-            <li class="blog-manage">
-                <a href="##">
-                    <p><i></i>博客管理</p>
-                </a>
-            </li>
-            <li class="news-upload">
-                <a href="##">
-                    <p><i></i>新闻上传</p>
-                </a>
-            </li>
-            <li class="join-us">
-                <a href="##">
-                    <p><i></i>加入我们</p>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <!-- 标签页 -->
     <div id="content">
-        <div class="header">
-            <p>项目管理</p>
+        <!-- 侧栏 -->
+        <div id="sidebar">
+            <div class="user-image">
+                <i></i>
+                <p class="name">张延伟</p>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="user-setting">
+                    <a href="##">
+                        <p><i></i>账户设置</p>
+                    </a>
+                </li>
+                <li class="project-manage  active">
+                    <a href="##">
+                        <p><i></i>项目管理</p>
+                    </a>
+                </li>
+                <li class="blog-manage">
+                    <a href="##">
+                        <p><i></i>博客管理</p>
+                    </a>
+                </li>
+                <li class="news-upload">
+                    <a href="##">
+                        <p><i></i>新闻上传</p>
+                    </a>
+                </li>
+                <li class="join-us">
+                    <a href="##">
+                        <p><i></i>加入我们</p>
+                    </a>
+                </li>
+            </ul>
         </div>
-        <ul class="nav">
-           <li class="p-list"><a href="##">项目列表</a></li> 
-           <li class="p-upload  nav-active"><a href="##">项目上传</a></li> 
-           <li class="p-update"><a href="##">项目更新</a></li> 
-           <li class="p-examine"><a href="##">项目审核</a></li> 
-        </ul>
-       
+        <!-- 标签页 -->
+        <div id="page-content">
+            <div class="header">
+                <p>项目管理</p>
+            </div>
+            <ul class="nav">
+               <li class="p-list"><a href="index.html">项目列表</a></li> 
+               <li class="p-upload  nav-active"><a href="project-upload.html">项目上传</a></li> 
+               <li class="p-update"><a href="project-update.html">项目更新</a></li> 
+               <li class="p-examine"><a href="project-examine.html">项目审核</a></li> 
+            </ul>
+            <div class="main">
+                <div class="input-box">
+                    <div class="box-title">产品基本信息</div>
+                    <label for="app-icon">应用图标</label>
+                    <input id="app-icon" type="file" />
+                    <input type="text" placeholder="项目组成员" />
+                    <input type="text" placeholder="项目组名称" />
+                    <input type="text" placeholder="大小" />
+                    <input type="text" placeholder="版本" />
+                    <input type="text" placeholder="系统支持" />
+                </div>
+                <div class="input-box">
+                    <div class="box-title">产品简介</div>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="产品简介"></textarea>
+                </div>
+                <div class="input-box">
+                    <div class="box-title">功能介绍</div>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="功能介绍"></textarea>
+                </div>
+                <div class="input-box">
+                    <div class="box-title">产品特色</div>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="产品特色"></textarea>
+                </div>
+                <div class="input-box">
+                    <div class="box-title">更新说明<i></i></div>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="更新说明"></textarea>
+                </div>
+                <div class="input-box">
+                    <div class="box-title">产品截图</div>
+                    <input type="file" />
+                </div>
+                <div class="input-box">
+                    <div class="box-title">应用上传<i></i></div>
+                    <input type="file" id="capture-file"/> 
+                </div>
+                <div class="input-box">
+                    <div class="box-title">产品链接<i></i></div>
+                    <input type="text" placeholder="产品链接" />
+                </div>
+                <div class="btn-submit">
+                    <span>发布</span>
+                </div>
+            </div>
+            
+        </div>
     </div>
+    <script src="js/project-upload.js"></script>
+
+
 </body>
 </html>
