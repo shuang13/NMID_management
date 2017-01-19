@@ -1,0 +1,40 @@
+#blog-title {
+    display: block;
+    margin-bottom: 30px;
+
+    padding-left: 10px;
+    width: 986px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: #F9F9F9;
+}
+#blog-type {
+    display: block;
+    margin-bottom: 30px;
+    padding-left: 5px;
+    width: 998px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: #F9F9F9;
+    color: #A9A9A9;
+
+}
+.blog-tag {
+    display: inline-block;
+    margin-bottom: 30px;
+    padding: 0 10px;
+    width: 90px;
+    height: 30px;
+    background: #E5E5E5;
+    outline: none;
+    border:none;
+    border-radius: 15px;
+}
+textarea {
+    display: block;
+    padding: 10px;
+    width: 978px;
+    background: #F9F9F9;
+    border: 1px solid #ccc;
+    resize: none;
+}
