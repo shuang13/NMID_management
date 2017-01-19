@@ -77,10 +77,33 @@
                         <option value="类别">类别</option>
                     </select>
                     <input class="blog-tag" type="text" placeholder="填写标签"/>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <!-- 加载编辑器的容器 -->
+                    <script id="container" name="content" type="text/plain"></script> 
+                    <div class="blog-btn">
+                        <div class="btn-save">
+                            <span>存为草稿</span>
+                        </div>
+                        <div class="btn-submit">
+                            <span>立即发布</span>
+                        </div>
+                    </div>
+                    
                 </form>
             </div>
         </div>
     </div>
+
+    <!-- jq -->
+    <script src="js/jquery.min.js"></script>
+    <!-- 配置文件 -->
+    <script type="text/javascript" src="utf8-jsp/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="utf8-jsp/ueditor.all.js"></script>
+    <!-- 实例化编辑器 -->
+    <script type="text/javascript">
+        var ue = UE.getEditor('container');
+
+
+    </script>
 </body>
 </html>

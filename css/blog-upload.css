@@ -3,7 +3,7 @@
     margin-bottom: 30px;
 
     padding-left: 10px;
-    width: 986px;
+    width: 950px;
     height: 30px;
     border: 1px solid #ccc;
     background: #F9F9F9;
@@ -12,7 +12,7 @@
     display: block;
     margin-bottom: 30px;
     padding-left: 5px;
-    width: 998px;
+    width: 960px;
     height: 30px;
     border: 1px solid #ccc;
     background: #F9F9F9;
@@ -33,8 +33,38 @@
 textarea {
     display: block;
     padding: 10px;
-    width: 978px;
+    width: 948px;
     background: #F9F9F9;
     border: 1px solid #ccc;
     resize: none;
+}
+/*提交按钮*/
+.blog-btn {
+    position: absolute;
+    margin: 30px 0 0 662px;
+    width: 300px;
+}
+.btn-submit, .btn-save {
+    display: inline-block;
+    margin-left: 18px;
+}
+.btn-submit span, .btn-save span{
+    display: inline-block;
+    width: 130px;
+    height: 33px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 33px;
+}
+.btn-submit span {
+    background: #313131;
+    color: #fff;
+}
+.btn-save span {
+    background: #fff;
+    color: #000;
+}
+.btn-submit span:hover, .btn-save span:hover {
+    outline: 1px solid #FFEA00;
+    cursor: pointer;
 }
