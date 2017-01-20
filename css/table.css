@@ -6,15 +6,15 @@
 } 
 #content table th:first-child, td:first-child {
     border-left: 1px solid #ccc;
-    
 }
 #content table th, td {
     max-width: 140px;
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    padding: 0px 14px 0 14px;
+    padding: 5px 14px 5px 14px;
     font-weight: normal;
     text-align:left;
+    overflow: hidden;
 }
 #content table .operate a, .state a{
     color: #06A2E9;
