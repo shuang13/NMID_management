@@ -8,30 +8,31 @@ form {
 	margin-top: 13px;
 }
 /*头像设置*/
-.head-setting .choose-pic {
-	vertical-align: middle;
+#upload-pic {
+    width: 50px;
+    height: 32px;
+    vertical-align: middle;
     position: relative;
-    left: -218px;
-    filter: alpha(opacity=0);
+    left: -60px;
     opacity: 0;
-	z-index: 1;
-	width: 223px;
-	cursor: pointer;
+    z-index: 1;
+    cursor: pointer;
+    font-size: 0px;
 }
-/*地址预览框*/
-.head-setting .viewfile {
-	width: 250px;
-	height: 30px;
-	border: 1px solid #ccc;
-	background: #f9f9f9;
+#viewfile {
+    width: 250px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    cursor: not-allowed;
 }
 /*选择文件按钮*/
-.head-setting .file-button {
-	width: 50px;
-	height: 32px;
-	border: 1px solid #ccc;
-	border-left: none;
-	background: #f9f9f9;
+.file-button {
+    width: 50px;
+    height: 32px;
+    border: 1px solid #ccc;
+    border-left: none;
+    background: #f9f9f9;
 }
 /*基本信息设置*/
 .input-box {

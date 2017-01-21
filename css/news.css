@@ -10,24 +10,27 @@
 	background: #F9F9F9;
 	border: 1px solid #ccc;
 }
+/*文件上传部分*/
 .file-upload-box {
 	margin: 15px 0;
 }
-.choose-pic {
+#upload-pic {
+    width: 50px;
+    height: 32px;
 	vertical-align: middle;
     position: relative;
-    left: -218px;
-    filter: alpha(opacity=0);
+    left: -60px;
     opacity: 0;
 	z-index: 1;
-	width: 223px;
 	cursor: pointer;
+    font-size: 0px;
 }
-.viewfile {
+#viewfile {
 	width: 250px;
 	height: 30px;
 	border: 1px solid #ccc;
 	background: #f9f9f9;
+    cursor: not-allowed;
 }
 /*选择文件按钮*/
 .file-button {
