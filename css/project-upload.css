@@ -85,7 +85,6 @@
 }
 
 .buttonText {
-    display: inline-block;
     padding: 2px 5px;
     margin-left: -4px;
     height: 30px;
@@ -94,3 +93,4 @@
     outline: none;
     cursor: pointer;
 }
+
