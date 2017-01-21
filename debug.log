@@ -29,3 +29,24 @@
 [0118/143606:ERROR:process_info.cc(608)] range at 0xfefc9000, size 0xf84 fully unreadable
 [0118/143606:ERROR:process_info.cc(608)] range at 0xfe38f000, size 0x230 fully unreadable
 [0118/143606:ERROR:process_info.cc(608)] range at 0xfe38e000, size 0xf84 fully unreadable
+[0120/125838:ERROR:process_info.cc(608)] range at 0xff208000, size 0x230 fully unreadable
+[0120/125838:ERROR:process_info.cc(608)] range at 0xff20f000, size 0xf84 fully unreadable
+[0120/130650:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
+[0120/130650:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
+[0120/130650:ERROR:process_info.cc(608)] range at 0xff6ba000, size 0x230 fully unreadable
+[0120/130650:ERROR:process_info.cc(608)] range at 0xff6bd000, size 0xf84 fully unreadable
+[0120/130650:ERROR:process_reader_win.cc(233)] ReadMemory at 0xef2d3c of 512 bytes failed: 仅完成部分的 ReadProcessMemory 或 WriteProcessMemory 请求。 (0x12B)
+[0120/130650:ERROR:crash_report_exception_handler.cc(98)] WriteEverything failed
+[0120/130650:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: 已尝试访问正在退出的过程。  (0xc000010a)
+[0120/142208:ERROR:process_info.cc(608)] range at 0xfeead000, size 0x230 fully unreadable
+[0120/142208:ERROR:process_info.cc(608)] range at 0xfe2fd000, size 0x230 fully unreadable
+[0120/142209:ERROR:process_info.cc(608)] range at 0xfe2fc000, size 0xf84 fully unreadable
+[0120/142209:ERROR:process_info.cc(608)] range at 0xfeea9000, size 0xf84 fully unreadable
+[0120/142210:ERROR:process_info.cc(608)] range at 0xfe639000, size 0x230 fully unreadable
+[0120/142210:ERROR:process_info.cc(608)] range at 0xfe63f000, size 0xf84 fully unreadable
+[0120/142210:ERROR:process_info.cc(608)] range at 0xffc37000, size 0x230 fully unreadable
+[0120/142210:ERROR:process_info.cc(608)] range at 0xff834000, size 0x230 fully unreadable
+[0120/142210:ERROR:process_info.cc(608)] range at 0xfe59e000, size 0x230 fully unreadable
+[0120/142210:ERROR:process_info.cc(608)] range at 0xffc3f000, size 0xf84 fully unreadable
+[0120/142210:ERROR:process_info.cc(608)] range at 0xfe59d000, size 0xf84 fully unreadable
+[0120/142210:ERROR:process_info.cc(608)] range at 0xff83f000, size 0xf84 fully unreadable
