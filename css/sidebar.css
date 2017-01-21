@@ -1,6 +1,7 @@
 #sidebar {
     float: left;
     width: 210px;
+    min-height: 912px;
     background: #313239;
 }
 .user-image {
