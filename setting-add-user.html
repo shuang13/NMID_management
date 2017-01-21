@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>添加用户</title>
+    
+    <!-- 公共样式 -->
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
+    <link rel="stylesheet" href="css/page.css" />
+
+    <!-- 基本设置样式 -->
+    <link rel="stylesheet" href="css/setting.css" />
+    
+</head>
+<body>
+    <!-- 顶栏 -->
+    <header id="top-bar">
+        <img class="logo" src="image/logo.png" alt="" />
+        <ul class="top-nav">
+            <li class="message"><i></i></li>
+            <li class="tag"><i></i></li>
+            <li class="set"><i></i></li>
+            <li class="search"><i></i></li>
+        </ul>
+    </header>
+    <div id="content">
+        <!-- 侧栏 -->
+        <div id="sidebar">
+            <div class="user-image">
+                <i></i>
+                <p class="name">张延伟</p>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="user-setting">
+                    <a href="##">
+                        <p><i></i>账户设置</p>
+                    </a>
+                </li>
+                <li class="project-manage  active">
+                    <a href="##">
+                        <p><i></i>项目管理</p>
+                    </a>
+                </li>
+                <li class="blog-manage">
+                    <a href="blog-upload.html">
+                        <p><i></i>博客管理</p>
+                    </a>
+                </li>
+                <li class="news-upload">
+                    <a href="##">
+                        <p><i></i>新闻上传</p>
+                    </a>
+                </li>
+                <li class="join-us">
+                    <a href="##">
+                        <p><i></i>加入我们</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- 标签页 -->
+        <div id="page-content">
+            <div class="header">
+                <p>账户设置</p>
+            </div>
+            <ul class="nav">
+               <li class="s-basic"><a href="setting.html">基本设置</a></li> 
+               <li class="s-resume"><a href="setting-resume.html">简历设置</a></li> 
+               <li class="s-log"><a href="setting-log.html">登录日志</a></li> 
+               <li class="s-user-list"><a href="setting-user-list.html">用户列表</a></li> 
+               <li class="s-add-user nav-active"><a href="setting-add-user.html">增加用户</a></li> 
+            </ul>
+            <div class="main setting-add-user">
+                <p>用户名</p>
+                <div class="input-box infor-setting">
+                    <input type="text" placeholder="姓名" class="add-user-name"/>
+                    <input type="text" placeholder="邮箱" class="add-user-email"/>
+                </div>
+                <p>用户角色</p>
+                <div class="character">
+                    <input type="radio" name="user-type" value="ordinary-user"/><span class="option-text">普通用户</span>
+                    <input type="radio" name="user-type" value="admin"/><span class="option-text">管理员</span>
+                </div>
+                <p>平台</p>
+                <div class="platform">
+                    <input type="radio" name="platform" value=""/><span class="option-text">客户端平台</span>
+                    <input type="radio" name="platform" value=""/><span class="option-text">服务器平台</span>
+                    <input type="radio" name="platform" value=""/><span class="option-text">硬件平台</span>
+                    <input type="radio" name="platform" value=""/><span class="option-text">平台培训生</span>
+                    <input type="radio" name="platform" value=""/><span class="option-text">孵化平台</span>
+                    <input type="radio" name="platform" value=""/><span class="option-text">指导老师</span>   
+                </div>
+                <p>职务</p>
+                <div class="job">
+                    <input type="checkbox" name="job" value=""/><span class="option-text">成员</span>
+                    <input type="checkbox" name="job" value=""/><span class="option-text">平台联络人</span>
+                    <input type="checkbox" name="job" value=""/><span class="option-text">团队联络人</span>
+                    <input type="checkbox" name="job" value=""/><span class="option-text">运营专责</span>
+                    <input type="checkbox" name="job" value=""/><span class="option-text">产品线</span>
+                    <input type="checkbox" name="job" value=""/><span class="option-text">UI设计组</span>
+                </div>
+                <div class="btn-submit">
+                    <span>确认创建</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

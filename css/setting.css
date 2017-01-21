@@ -110,3 +110,14 @@ form {
 .division {
     color: #06A2E9;
 }
+/*添加用户页面样式*/
+.setting-add-user .input-box input[type=text] {
+    display: block;
+}
+.setting-add-user input[type=radio],input[type=checkbox] {
+    margin: 18px 10px 30px 0;
+}
+.option-text {
+    display: inline-block;
+    width: 150px;
+}
