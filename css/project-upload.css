@@ -81,6 +81,7 @@
     border: none !important;
     border-right: 1px solid #ccc !important;
     height: 34px !important;
+    cursor: not-allowed;
 }
 
 .buttonText {
@@ -91,4 +92,5 @@
     border-left: none;
     font-size: 14px;
     outline: none;
+    cursor: pointer;
 }
