@@ -1,0 +1,70 @@
+.input-box {
+    position: relative;
+    padding: 41px 0 25px 0;
+    width: 1100px;
+}
+.news-title {
+	width: 950px;
+	height: 32px;
+	font-size: 14px;
+	background: #F9F9F9;
+	border: 1px solid #ccc;
+}
+.file-upload-box {
+	margin: 15px 0;
+}
+.choose-pic {
+	vertical-align: middle;
+    position: relative;
+    left: -218px;
+    filter: alpha(opacity=0);
+    opacity: 0;
+	z-index: 1;
+	width: 223px;
+	cursor: pointer;
+}
+.viewfile {
+	width: 250px;
+	height: 30px;
+	border: 1px solid #ccc;
+	background: #f9f9f9;
+}
+/*选择文件按钮*/
+.file-button {
+	width: 50px;
+	height: 32px;
+	border: 1px solid #ccc;
+	border-left: none;
+	background: #f9f9f9;
+}
+/*提交按钮*/
+.news-btn {
+    position: absolute;
+    margin: 30px 0 0 662px;
+    width: 300px;
+}
+.btn-submit, .btn-save {
+    display: inline-block;
+    float: left;
+    margin-left: 18px;
+}
+.btn-submit span, .btn-save span{
+    display: inline-block;
+    width: 130px;
+    height: 33px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 33px;
+}
+.btn-submit span {
+    background: #313131;
+    color: #fff;
+}
+.btn-save span {
+    background: #fff;
+    color: #000;
+}
+.btn-submit span:hover, .btn-save span:hover {
+    outline: 1px solid #FFEA00;
+    cursor: pointer;
+}

@@ -30,7 +30,7 @@ form {
 	width: 50px;
 	height: 32px;
 	border: 1px solid #ccc;
-	border-left: 0;
+	border-left: none;
 	background: #f9f9f9;
 }
 /*基本信息设置*/
