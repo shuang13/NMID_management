@@ -24,6 +24,7 @@
     width: 16px;
     height: 16px;
     background: url(../image/Icon_Trash.png) 0 0 no-repeat;
+    cursor: pointer;
 }
 .input-box input[type=text] {
     margin-right: 40px;
@@ -43,6 +44,9 @@
     background: #F9F9F9;
     border: 1px solid #ccc;
     resize: none;
+}
+#group-member {
+    margin-left: 107px;
 }
 /*提交按钮*/
 .btn-submit {
