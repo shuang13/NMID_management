@@ -50,3 +50,12 @@
 [0120/142210:ERROR:process_info.cc(608)] range at 0xffc3f000, size 0xf84 fully unreadable
 [0120/142210:ERROR:process_info.cc(608)] range at 0xfe59d000, size 0xf84 fully unreadable
 [0120/142210:ERROR:process_info.cc(608)] range at 0xff83f000, size 0xf84 fully unreadable
+[0124/183742:ERROR:process_info.cc(608)] range at 0xfefc3000, size 0x230 fully unreadable
+[0124/183742:ERROR:process_info.cc(608)] range at 0xff844000, size 0x230 fully unreadable
+[0124/183742:ERROR:process_info.cc(608)] range at 0xfed8e000, size 0x230 fully unreadable
+[0124/183743:ERROR:process_info.cc(608)] range at 0xfefcf000, size 0xf84 fully unreadable
+[0124/183743:ERROR:process_info.cc(608)] range at 0xfed8d000, size 0xf84 fully unreadable
+[0124/183743:ERROR:process_info.cc(608)] range at 0xfe869000, size 0x230 fully unreadable
+[0124/183743:ERROR:process_info.cc(608)] range at 0xfe86f000, size 0xf84 fully unreadable
+[0124/183744:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: 已尝试访问正在退出的过程。  (0xc000010a)
+[0124/183744:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: 已尝试访问正在退出的过程。  (0xc000010a)

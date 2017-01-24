@@ -1,0 +1,56 @@
+$(document).ready(function () {
+    $.ajax({
+            type: "POST",
+            url: "../json/project-list",
+            success: function(data){
+                if(typeof data == 'string') {
+                    data = JSON.parse(data);
+                }
+
+                // 解析表格数据
+                parseTable(data.aaData);
+                
+                // 根据解析的结果，绘制表格
+                drawTable(window.formdata);
+
+                window.data = data;
+            }
+        });
+    // 解析表格数据
+    function parseTable(data) {
+        window.formdata = [];
+        for(var i = 0; i < data.length; i++) {
+            window.formdata.push({
+                "order-number": data[i][0],
+                "name": data[i][1],
+                "member": data[i][2],
+                "type": data[i][3],
+                "version": data[i][4],
+                "update-time": data[i][5],
+                "status": data[i][6]
+            });
+        }
+    }
+    // 绘制表格
+    function drawTable (data, callback) {
+        var $frag = $(document.createDocumentFragment());
+
+        var $table = $('table');
+        var $ths = $table.find('th');
+    
+        for(var i = 0; i < data.length; i++) {
+            var $tr = $('<tr></tr>');
+            for(var j = 0; j < $ths.length - 1; j++) {
+                $tr.append('<td>' + data[i][$ths.eq(j).attr('data-name')] + '</td');
+
+            }
+            $tr.append( '<td class="operate">' +
+                            '<a href="##">查看</a>' +
+                            '<a href="##">更新</a>' +
+                        '</td>');
+            $frag.append($tr);
+        }
+        $table.find('tbody').empty().append($frag);
+
+    };
+});
