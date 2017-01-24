@@ -1,28 +1,48 @@
 $(document).ready(function () {
     var ue = UE.getEditor('container');
-    //对编辑器的操作最好在编辑器ready之后再做
-    // ue.ready(function() {
-    //     $submit.on('click', function (event) {
-    //         //获取html内容，返回: 
-    //         var content = ue.getContent();
-        
-    //         var article = {
-    //             id: $.trim(articleId),
-    //             title: $.trim($title.val()),
-    //             content: $.trim(content),
-    //             tag: $.trim($tag.val()),
-    //         };
-    
-    //         $.ajax({
-    //             type: "POST",
-    //             url: "##",
-    //             data: article,
-    //             success: function(data){
+
+    var $title = $('#blog-title');
+    var $type = $('#blog-type');
+    var $tag = $('.blog-tag');
+    var $save = $('.btn-save');
+    var $submit = $('.btn-submit');
+    ue.ready(function() {
+
+        $submit.on('click', function (event) {
+            //获取html内容，返回: 
+            var content = ue.getContent();
+            var article = {
+                title: $title.val(),
+                type: $type.val(),
+                tag: $tag.val(),
+                content: content,
+            };
+            if(article.title == '') {
+                alert("部分信息未填！");
+                return ;
+            }
+            if(article.type == '') {
+                alert("部分信息未填！");
+                return ;
+            }
+            if(article.tag == '') {
+                alert("部分信息未填！");
+                return ;
+            }
+            if(article.content == '') {
+                alert("部分信息未填！");
+                return ;
+            }
+            $.ajax({
+                type: "POST",
+                url: "##",
+                data: article,
+                success: function(data){
                 
-    //             alert("发布成功！")
+                alert("发布成功！")
                 
-    //             }
-    //         })
-    //     })
-    // })
-})
+                }
+            });
+        });
+    });
+});
