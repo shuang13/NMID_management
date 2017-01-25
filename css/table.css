@@ -15,6 +15,7 @@
     font-weight: normal;
     text-align:left;
     overflow: hidden;
+    word-break:break-all;
 }
 #content table .operate a, .state a{
     color: #06A2E9;
