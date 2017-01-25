@@ -53,7 +53,7 @@
     position: relative;
     width: 974px;
 }
-.btn-submit span{
+.btn-submit a{
     display: block;
     position: absolute;
     right: 0;
@@ -66,7 +66,7 @@
     line-height: 33px;
 
 }
-.btn-submit span:hover {
+.btn-submit a:hover {
     outline: 1px solid #FFEA00;
     cursor: pointer;
 }
