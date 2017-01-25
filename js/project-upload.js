@@ -73,7 +73,19 @@ $(document).ready(function () {
             alert("部分信息未填！");
             return ;
         }
-        
+        // 文件上传
+        $.ajaxFileUpload ({
+            url:'', //你处理上传文件的服务端
+            secureuri:false, //与页面处理代码中file相对应的ID值
+            fileElementId:'file',
+            data: '',
+            dataType: 'json', 
+            success: function (data) {
+                if(typeof data == 'string') {
+                    data = JSON.parse(data);
+                }
+            }
+        });
         $.ajax({
             type: 'POST',
             url: '',
