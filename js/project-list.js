@@ -24,10 +24,11 @@ $(document).ready(function () {
                 "order-number": data[i][0],
                 "name": data[i][1],
                 "member": data[i][2],
-                "type": data[i][3],
-                "version": data[i][4],
-                "update-time": data[i][5],
-                "status": data[i][6]
+                "system": data[i][3],
+                "type": data[i][4],
+                "version": data[i][5],
+                "update-time": data[i][6],
+                "status": data[i][7]
             });
         }
     }
