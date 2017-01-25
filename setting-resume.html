@@ -11,6 +11,18 @@
 
     <!-- 基本设置样式 -->
     <link rel="stylesheet" href="css/setting.css" />
+
+    <!-- 弹出层样式 -->
+    <link rel="stylesheet" href="css/reveal.css">
+
+    <!-- js配置文件 -->
+    <script src="js/jquery.min.js"></script>
+
+    <!-- 设置页面js文件 -->
+    <script src="js/setting.js"></script>
+
+    <!-- 弹出层配置文件 -->
+    <script type="text/javascript" src="js/jquery.reveal.js"></script>
     
 </head>
 <body>
@@ -74,7 +86,7 @@
             <div class="main setting-resume">
                 <form action="#">
                     <div class="input-box">
-                        <div class="box-title">担任职务<i></i></div>
+                        <div class="box-title">担任职务<a href="#"><i></i></a></div>
                         <textarea name="" id="job" cols="30" rows="10" placeholder="职务1：说明"></textarea>
                     </div>
                     <div class="input-box">
@@ -97,7 +109,17 @@
                         <div class="box-title">添加标签</div>
                     </div>
                     <div class="btn-submit">
-                        <span>发布</span>
+                        <a href="#" data-reveal-id="confirm-release-box-reveal">发布</a>
+                    </div>
+                    <!-- 弹出层 -->
+                    <div id="confirm-release-box-reveal" class="reveal-modal">
+                        <div class="reveal-text">
+                            <span>您确定要发布吗？</span>
+                        </div>
+                        <button class="btn-submit"><span>确认</span></button>
+                        <button class="btn-cancel"><span>取消</span></button>
+                        <!-- 弹出层关闭按钮 -->
+                        <a class="close-reveal-modal"><img src="image/close.png" alt="关闭图标" class="reveal-close-icon"></a>
                     </div>
                 </form>
             </div>

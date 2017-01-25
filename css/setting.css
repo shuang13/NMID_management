@@ -62,7 +62,6 @@ form {
     width: 16px;
     height: 16px;
     background: url(../image/Icon_Trash.png) 0 0 no-repeat;
-    cursor: pointer;
 }
 .input-box input[type=text] {
     margin-right: 40px;
@@ -87,7 +86,7 @@ form {
     position: relative;
     width: 999px;
 }
-.btn-submit span{
+.btn-submit a{
     display: block;
     position: absolute;
     right: 0;
@@ -99,7 +98,7 @@ form {
     font-size: 14px;
     line-height: 33px;
 }
-.btn-submit span:hover {
+.btn-submit a:hover {
     outline: 1px solid #FFEA00;
     cursor: pointer;
 }
