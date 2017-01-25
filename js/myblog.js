@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $.ajax({
             type: "POST",
-            url: "../json/project-list",
+            url: "../json/myblog",
             success: function(data){
                 if(typeof data == 'string') {
                     data = JSON.parse(data);
@@ -17,7 +17,6 @@ $(document).ready(function () {
 
                 // 操作
                 operate();
-                
             }
         });
     // 解析表格数据
@@ -25,14 +24,12 @@ $(document).ready(function () {
         window.formdata = [];
         for(var i = 0; i < data.length; i++) {
             window.formdata.push({
-                "order-number": data[i][0],
-                "name": data[i][1],
-                "member": data[i][2],
-                "system": data[i][3],
-                "type": data[i][4],
-                "version": data[i][5],
-                "update-time": data[i][6],
-                "status": data[i][7]
+                "classify": data[i][0],
+                "tag": data[i][1],
+                "title": data[i][2],
+                "status": data[i][3],
+                "time": data[i][4],
+                "modify": data[i][5]
             });
         }
     }
@@ -46,36 +43,26 @@ $(document).ready(function () {
         for(var i = 0; i < data.length; i++) {
             var $tr = $('<tr></tr>');
             for(var j = 0; j < $ths.length - 1; j++) {
-                if (data[i][$ths.eq(j).attr('data-name')] == "审核中" ) {
-                    $tr.append('<td class="state">' +
-                                    '<a class="pass" href="##">通过</a>' + 
-                                    '<a class="unpass" href="##">不通过</a>' +
-                                '</td>');
-                }
-                else {
-                    $tr.append('<td>' + data[i][$ths.eq(j).attr('data-name')] + '</td');
-                }
+                $tr.append('<td>' + data[i][$ths.eq(j).attr('data-name')] + '</td');
 
             }
             $tr.append( '<td class="operate">' +
-                            '<a href="##">查看</a>' +
-                            '<a href="##">更新</a>' +
+                            '<a class="edit" href="##">编辑</a>' +
+                            '<a class="delete" href="##">删除</a>' +
                         '</td>');
             $frag.append($tr);
         }
         $table.find('tbody').empty().append($frag);
 
     };
-    // 表格操作
+     // 表格操作
     function operate() {
-        $('.pass').on('click',function (event) {
-            alert("通过？" + $(this).parent().parent('tr').index());
+        $('.edit').on('click',function (event) {
+            alert("编辑？" + $(this).parent().parent('tr').index());
             $(this).css("color","red");
             var id = $(this).parent().parent('tr').index() + 1;
-            var statue = "通过";
             var info = {
-                id: id,
-                statue: statue
+                id: id
             };
             // $.ajax({
             //     type: "POST",
@@ -96,14 +83,12 @@ $(document).ready(function () {
             //     }
             // });
         });
-         $('.unpass').on('click',function (event) {
-            alert("不通过？" + $(this).parent().parent('tr').index());
+         $('.delete').on('click',function (event) {
+            alert("删除？" + $(this).parent().parent('tr').index());
             $(this).css("color","red");
             var id = $(this).parent().parent('tr').index() + 1;
-            var statue = "不通过";
             var info = {
-                id: id,
-                statue: statue
+                id: id
             };
             // $.ajax({
             //     type: "POST",
