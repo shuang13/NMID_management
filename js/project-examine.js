@@ -58,8 +58,10 @@ $(document).ready(function () {
 
             }
             $tr.append( '<td class="operate">' +
-                            '<a href="##">查看</a>' +
-                            '<a href="##">更新</a>' +
+                            '<a href="project-update.html?id=' + 
+                            data[i]['order-number'] + '">查看</a>' +
+                            '<a href="project-update.html?id=' + 
+                            data[i]['order-number'] + '">更新</a>' +
                         '</td>');
             $frag.append($tr);
         }
@@ -69,60 +71,98 @@ $(document).ready(function () {
     // 表格操作
     function operate() {
         $('.pass').on('click',function (event) {
-            alert("通过？" + $(this).parent().parent('tr').index());
-            $(this).css("color","red");
-            var id = $(this).parent().parent('tr').index() + 1;
-            var statue = "通过";
-            var info = {
-                id: id,
-                statue: statue
-            };
-            // $.ajax({
-            //     type: "POST",
-            //     url: "../json/project-list",
-            //     data: info,
-            //     success: function(data){
-            //         if(typeof data == 'string') {
-            //             data = JSON.parse(data);
-            //         }
+            event.preventDefault();
+             // 插入到弹出框的内容
+            var html = [
+                '<div>确认要通过此项目？</div>',
+                '<button class="true btn btn-danger"',
+                    ' style="position: absolute; bottom: 10px;',
+                    ' right: 100px;">确定</button>',
+                '<button class="false btn btn-default"',
+                    ' style="position: absolute; bottom: 10px;',
+                    ' right: 30px;">取消</button>'
+            ].join('');
     
-            //         // 解析表格数据
-            //         parseTable(data.aaData);
-                    
-            //         // 根据解析的结果，绘制表格
-            //         drawTable(window.formdata);
-    
-            //         window.data = data;
-            //     }
-            // });
+            $.notice('项目审核提示：', html, function () {
+                // 确认修改
+                $('.jq-notice-container .true').on('click', function () {
+                    var id = $(this).parent().parent('tr').index() + 1;
+                    var statue = "通过";
+                    var info = {
+                            id: id,
+                            statue: statue
+                        };
+                    $.ajax({
+                        type: "POST",
+                        url: "????",
+                        data: info,
+                        success: function (data) {
+                            if(typeof data == 'string') {
+                                data = JSON.parse(data);
+                            }
+                            // 解析表格数据
+                            parseTable(data.aaData);
+                            
+                            // 根据解析的结果，绘制表格
+                            drawTable(window.formdata);
+            
+                            window.data = data;
+                        }
+                    });
+                });
+
+                // 取消修改
+                $('.jq-notice-container .false').on('click', function () {
+                    $.closeNotice();
+                });
+            }, 300, 150);
         });
-         $('.unpass').on('click',function (event) {
-            alert("不通过？" + $(this).parent().parent('tr').index());
-            $(this).css("color","red");
-            var id = $(this).parent().parent('tr').index() + 1;
-            var statue = "不通过";
-            var info = {
-                id: id,
-                statue: statue
-            };
-            // $.ajax({
-            //     type: "POST",
-            //     url: "../json/project-list",
-            //     data: info,
-            //     success: function(data){
-            //         if(typeof data == 'string') {
-            //             data = JSON.parse(data);
-            //         }
+        $('.unpass').on('click',function (event) {
+            event.preventDefault();
+             // 插入到弹出框的内容
+            var html = [
+                '<div>确认要不通过此项目？</div>',
+                '<button class="true btn btn-danger"',
+                    ' style="position: absolute; bottom: 10px;',
+                    ' right: 100px;">确定</button>',
+                '<button class="false btn btn-default"',
+                    ' style="position: absolute; bottom: 10px;',
+                    ' right: 30px;">取消</button>'
+            ].join('');
     
-            //         // 解析表格数据
-            //         parseTable(data.aaData);
-                    
-            //         // 根据解析的结果，绘制表格
-            //         drawTable(window.formdata);
-    
-            //         window.data = data;
-            //     }
-            // });
+            $.notice('项目审核提示：', html, function () {
+                // 确认修改
+                $('.jq-notice-container .true').on('click', function () {
+                    var id = $(this).parent().parent('tr').index() + 1;
+                    var statue = " 不通过";
+                    var info = {
+                            id: id,
+                            statue: statue
+                        };
+                    $.ajax({
+                        type: "POST",
+                        url: "????",
+                        data: info,
+                        success: function (data) {
+                            if(typeof data == 'string') {
+                                data = JSON.parse(data);
+                            }
+                            // 解析表格数据
+                            parseTable(data.aaData);
+                            
+                            // 根据解析的结果，绘制表格
+                            drawTable(window.formdata);
+            
+                            window.data = data;
+                        }
+                    });
+                });
+
+                // 取消修改
+                $('.jq-notice-container .false').on('click', function () {
+                    $.closeNotice();
+                });
+            }, 300, 150);
         });
     }
 });
