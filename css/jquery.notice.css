@@ -6,7 +6,7 @@
     bottom: 0;
     right: 0;
     background: rgba(99, 99, 99, 0.1);
-    z-index: 20;
+    z-index: 999;
 }
 /*隐藏弹出框背景*/
 .jq-notice-container.hidden {

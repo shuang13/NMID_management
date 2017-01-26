@@ -7,8 +7,16 @@ $(document).ready(function () {
     var $save = $('.btn-save');
     var $submit = $('.btn-submit');
     ue.ready(function() {
+        // 存为草稿
+        $save.on('click', function(event) {
+            event.preventDefault();
+            $.notice('博客上传提示：', '保存成功！', undefined, 300, 150);
+        });
 
+
+        // 立即发布
         $submit.on('click', function (event) {
+            event.preventDefault();
             //获取html内容，返回: 
             var content = ue.getContent();
             var article = {
@@ -17,32 +25,22 @@ $(document).ready(function () {
                 tag: $tag.val(),
                 content: content,
             };
-            if(article.title == '') {
-                alert("部分信息未填！");
-                return ;
-            }
-            if(article.type == '') {
-                alert("部分信息未填！");
-                return ;
-            }
-            if(article.tag == '') {
-                alert("部分信息未填！");
-                return ;
-            }
-            if(article.content == '') {
-                alert("部分信息未填！");
-                return ;
-            }
+            $.each(article,function(index,item) {
+                if(article[index] == ''){
+                    $.notice('博客上传提示：', '部分信息未填写！', undefined, 300, 150);  
+                }
+            });
             $.ajax({
                 type: "POST",
                 url: "##",
                 data: article,
                 success: function(data){
-                
-                alert("发布成功！")
+
+                $.notice('博客上传提示：', '发布成功！', undefined, 300, 150);
                 
                 }
             });
         });
+        
     });
 });

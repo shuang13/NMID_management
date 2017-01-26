@@ -51,7 +51,7 @@
     float: left;
     margin-left: 18px;
 }
-.btn-submit span, .btn-save span{
+.btn-submit a, .btn-save a {
     display: inline-block;
     width: 130px;
     height: 33px;
@@ -59,15 +59,15 @@
     font-size: 14px;
     line-height: 33px;
 }
-.btn-submit span {
+.btn-submit a {
     background: #313131;
     color: #fff;
 }
-.btn-save span {
+.btn-save a {
     background: #fff;
     color: #000;
 }
-.btn-submit span:hover, .btn-save span:hover {
+.btn-submit a:hover, .btn-save a:hover {
     outline: 1px solid #FFEA00;
     cursor: pointer;
 }

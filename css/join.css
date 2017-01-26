@@ -51,7 +51,7 @@
     float: left;
     margin-left: 18px;
 }
-.btn-not-pass span, .btn-pass span{
+.btn-not-pass a, .btn-pass a {
     display: inline-block;
     width: 130px;
     height: 33px;
@@ -59,14 +59,13 @@
     font-size: 14px;
     line-height: 33px;
 }
-.btn-pass span {
+.btn-pass a {
     background: #313131;
     color: #fff;
 }
-.btn-not-pass span {
+.btn-not-pass a {
     color: #000;
 }
-.btn-not-pass span:hover, .btn-pass span:hover {
+.btn-not-pass a:hover, .btn-pass a:hover {
     outline: 1px solid #FFEA00;
-    cursor: pointer;
 }
