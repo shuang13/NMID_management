@@ -17,6 +17,7 @@ $(document).ready(function () {
 
 
     $submit.on('click', function (event) {
+        event.preventDefault();
         // 每次点击按钮时，读取用户名和密码
         var info = {
             member: $member.val(),
@@ -32,47 +33,12 @@ $(document).ready(function () {
         };
 
         // 检测信息是否为空
-        if(info.member == '') {
-            alert("部分信息未填！");
-            return ;
-        }
-
-        if(info.name == '') {
-            alert("部分信息未填！");
-            return ;
-        }
-        if(info.size == '') {
-            alert("部分信息未填！");
-            return ;
-        }
-        if(info.version == '') {
-            alert("部分信息未填！");
-            return ;
-        }
-        if(info.system == '') {
-            alert("部分信息未填！");
-            return ;
-        }
-        if(info.intro == '') {
-            alert("部分信息未填！");
-            return ;
-        }
-        if(info.func == '') {
-            alert("部分信息未填！");
-            return ;
-        }
-        if(info.feature == '') {
-            alert("部分信息未填！");
-            return ;
-        }
-        if(info.instruction == '') {
-            alert("部分信息未填！");
-            return ;
-        }
-        if(info.link == '') {
-            alert("部分信息未填！");
-            return ;
-        }
+        $.each(info,function(index,item) {
+            if(info[index] == '') {
+                $.notice('项目更新提示：', '部分信息未填写！', undefined, 300, 150);  
+            }
+        })
+        
         // 文件上传
         $.ajaxFileUpload ({
             url:'', //你处理上传文件的服务端
