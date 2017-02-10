@@ -1,6 +1,6 @@
 .applicant-box {
 	width: 1100px;
-	height: 270px;
+	min-height: 270px;
 	margin-top: 50px;
     padding: 0px 0 25px 0;
 }
