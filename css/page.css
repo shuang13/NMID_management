@@ -43,11 +43,11 @@
 }
 @media screen and (min-height: 768px) {
     .main {
-        min-height: 370px;
+        min-height: 376px;
     }
 }
 @media screen and (min-height: 900px) {
     .main {
-        min-height: 550px;
+        min-height: 556px;
     }
 }
