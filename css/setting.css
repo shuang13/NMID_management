@@ -28,6 +28,7 @@ form {
 }
 /*选择文件按钮*/
 .file-button {
+    vertical-align: top;
     width: 50px;
     height: 32px;
     border: 1px solid #ccc;
