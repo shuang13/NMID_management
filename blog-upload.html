@@ -69,31 +69,33 @@
             <div class="header">
                 <p>博客管理</p>
             </div>
-            <ul class="nav">
-               <li class="b-upload nav-active"><a href="blog-upload.html">博客上传</a></li> 
-               <li class="b-myblog"><a href="myblog.html">我的博客</a></li> 
-            </ul>
-            <div class="main">
-                <form action="#">
-                    <input id="blog-title" type="text" placeholder="标题" />
-                    <select id="blog-type">
-                        <option value="分类选择">分类选择</option>
-                        <option value="类别">类别</option>
-                        <option value="类别">类别</option>
-                        <option value="类别">类别</option>
-                    </select>
-                    <input class="blog-tag" type="text" placeholder="填写标签"/>
-                    <!-- 加载编辑器的容器 -->
-                    <script id="container" name="content" type="text/plain"></script> 
-                    <div class="blog-btn">
-                        <div class="btn-save">
-                            <a href="#">存为草稿</a>
+            <div id="inner-content">
+                <ul class="nav">
+                   <li class="b-upload nav-active"><a href="blog-upload.html">博客上传</a></li> 
+                   <li class="b-myblog"><a href="myblog.html">我的博客</a></li> 
+                </ul>
+                <div class="main">
+                    <form action="#">
+                        <input id="blog-title" type="text" placeholder="标题" />
+                        <select id="blog-type">
+                            <option value="分类选择">分类选择</option>
+                            <option value="类别">类别</option>
+                            <option value="类别">类别</option>
+                            <option value="类别">类别</option>
+                        </select>
+                        <input class="blog-tag" type="text" placeholder="填写标签"/>
+                        <!-- 加载编辑器的容器 -->
+                        <script id="container" name="content" type="text/plain"></script> 
+                        <div class="blog-btn">
+                            <div class="btn-save">
+                                <a href="#">存为草稿</a>
+                            </div>
+                            <div class="btn-submit">
+                                <a href="#">立即发布</a>
+                            </div>
                         </div>
-                        <div class="btn-submit">
-                            <a href="#">立即发布</a>
-                        </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

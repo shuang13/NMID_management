@@ -1,18 +1,10 @@
 #sidebar {
-    float: left;
+    position: fixed;
+    padding-top: 50px;
     width: 210px;
-    min-height: 680px;
+    height: 100%;
     background: #313239;
-}
-@media screen and ( min-height: 768px) {
-    #sidebar {
-        min-height: 732px;
-    }
-}
-@media screen and (min-height: 900px) {
-    #sidebar {
-        min-height: 912px;
-    }
+    z-index: 9;
 }
 .user-image {
     padding-top: 23px;

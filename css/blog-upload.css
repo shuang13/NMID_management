@@ -1,9 +1,8 @@
 #blog-title {
     display: block;
     margin-bottom: 30px;
-
     padding-left: 10px;
-    width: 950px;
+    width: 100%;
     height: 30px;
     border: 1px solid #ccc;
     background: #F9F9F9;
@@ -12,7 +11,7 @@
     display: block;
     margin-bottom: 30px;
     padding-left: 5px;
-    width: 960px;
+    width: 100%;
     height: 30px;
     border: 1px solid #ccc;
     background: #F9F9F9;
@@ -33,7 +32,7 @@
 textarea {
     display: block;
     padding: 10px;
-    width: 948px;
+    width: 100%;
     background: #F9F9F9;
     border: 1px solid #ccc;
     resize: none;
@@ -41,7 +40,7 @@ textarea {
 /*提交按钮*/
 .blog-btn {
     position: absolute;
-    margin: 30px 0 0 662px;
+    margin: 30px 0 0 655px;
     width: 300px;
 }
 .btn-submit, .btn-save {

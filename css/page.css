@@ -3,15 +3,12 @@
     background: #313239;
 }
 #page-content {
-    margin-left: 210px;
+    padding-left: 210px;
     background: #F9F9F9;
-    min-height: 680px;
-    min-width: 1140px;
 }
 #page-content .header{
+    padding-top: 50px;
     padding-left: 39px;
-    height: 72px;
-    min-width: 600px;
     border-bottom: 1px solid #ccc;
     line-height: 72px;
 }
@@ -20,7 +17,6 @@
 }
 #page-content .nav {
     margin: 46px 0 50px 39px;
-    width: 1100px;
     height: 46px;
     line-height: 46px;
     border-top: 1px solid #E4E4E4;
@@ -37,16 +33,14 @@
     background: url(../image/bg-active.png) 0 0 repeat-x;
 }
 .main {
+    position: relative;
+
     padding-left: 39px;
+    padding-right: 175px;
     padding-bottom: 139px;
 }
-@media screen and (min-height: 768px) {
-    .main {
-        min-height: 376px;
-    }
+#inner-content{
+    width: 100%;
+    padding-right: 50px;
 }
-@media screen and (min-height: 900px) {
-    .main {
-        min-height: 556px;
-    }
-}
+
