@@ -106,6 +106,14 @@ form {
 .password-setting {
 	margin-top: 60px;
 }
+
+.password-setting .input-box input[type=text] {
+    display: block;
+}
+
+.btn-password a{
+    position: static;
+}
 /*列表部分样式*/
 .division {
     color: #06A2E9;
