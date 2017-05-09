@@ -46,8 +46,10 @@ $(document).ready(function () {
 
             }
             $tr.append( '<td class="operate">' +
-                            '<a href="##">查看</a>' +
-                            '<a href="##">更新</a>' +
+                            '<a href="project-update.html?id=' + 
+                            data[i]['order-number'] + '">查看</a>' +
+                            '<a href="project-update.html?id=' + 
+                            data[i]['order-number'] + '">更新</a>' +
                         '</td>');
             $frag.append($tr);
         }

@@ -1,8 +1,11 @@
 /*表单样式*/
 .input-box {
+    display:flex;
+    flex-wrap: wrap;           
+    justify-content:space-between;
     position: relative;
-    padding: 41px 0 25px 0;
-    width: 1100px;
+    padding-top: 41px;
+    margin-top: 41px;
     border-top: 1px solid #ccc;
 }
 .input-box .box-title {
@@ -27,7 +30,6 @@
     cursor: pointer;
 }
 .input-box input[type=text] {
-    margin-right: 40px;
     margin-bottom: 17px;
     padding-left: 10px;
     width: 464px;
@@ -39,24 +41,20 @@
 .input-box textarea {
     margin-bottom: 17px;
     padding: 10px;
-    width: 974px;
+    width: 100%;
     height: 180px;
     background: #F9F9F9;
     border: 1px solid #ccc;
     resize: none;
 }
-#project-member {
-    margin-left: 107px;
-}
+
 /*提交按钮*/
 .btn-submit {
-    position: relative;
-    width: 974px;
+    float: right;
+    margin-top: 40px;
 }
 .btn-submit a{
     display: block;
-    position: absolute;
-    right: 0;
     width: 130px;
     height: 33px;
     background: #313131;

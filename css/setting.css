@@ -43,6 +43,7 @@ form {
 .input-box {
     position: relative;
     padding-top: 30px;
+
 }
 .infor-setting {
     display:flex;
@@ -50,13 +51,12 @@ form {
     justify-content:space-between;
 }
     /*水平线*/
-.horizon {
-    position: absolute;
-    margin-left: -39px;
-    padding-left: 39px;
-    width: 100%;
+.setting-resume .input-box {
+    padding-top: 41px;
+    margin-top: 41px;
+    border-top: 1px solid #ccc;
 }
-.horizon .box-title {
+.input-box .box-title {
     display: block;
     position: absolute;
     top: -16px;
@@ -67,19 +67,16 @@ form {
     font-size: 14px;
     color: #fff;
     line-height: 32px;
+    overflow: hidden;
 } 
-.horizon .box-hr {
-    width: 100%;
-    border-top: 1px solid #ccc;
-}
-
-.horizon .box-title i {
+.input-box .box-title i {
     display: inline-block;
     margin-left: 100px;
     vertical-align: middle;
     width: 16px;
     height: 16px;
     background: url(../image/Icon_Trash.png) 0 0 no-repeat;
+    cursor: pointer;
 }
 .input-box input[type=text] {
     margin-bottom: 30px;
@@ -102,6 +99,7 @@ form {
 /*提交按钮*/
 .btn-submit {
     float: right;
+    margin-top: 40px;
 }
 .btn-submit a{
     display: block;
@@ -142,5 +140,5 @@ form {
 }
 .option-text {
     display: inline-block;
-    width: 130px;
+    width: 135px;
 }
