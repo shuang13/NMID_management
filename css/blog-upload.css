@@ -18,9 +18,37 @@
     color: #A9A9A9;
 
 }
+/*标签样式*/
+.blog-tag-box {
+    display: inline-block;
+}
+.blog-tag-box li {
+    position: relative;
+    float: left;
+    margin-right: 18px;
+    margin-bottom: 30px;
+}
+.blog-tag-box li .delete-tag {
+    position: absolute;
+    top: -8px;
+    right: -2px;
+}
+.delete-icon {
+    width: 16px;
+    height: 16px;
+}
+.add-tag {
+    display: inline-block;
+    padding: 0 10px;
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    background: #313131;
+    color: #fff;
+    border-radius: 5px;
+}
 .blog-tag {
     display: inline-block;
-    margin-bottom: 30px;
     padding: 0 10px;
     width: 90px;
     height: 30px;

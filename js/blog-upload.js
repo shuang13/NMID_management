@@ -3,9 +3,33 @@ $(document).ready(function () {
 
     var $title = $('#blog-title');
     var $type = $('#blog-type');
+    var $tagBox = $('.blog-tag-box');
+    var $addTag = $('.add-tag');
     var $tag = $('.blog-tag');
     var $save = $('.btn-save');
     var $submit = $('.btn-submit');
+    // 标签事件
+    
+    $addTag.click(function (event) {
+        // 添加标签
+        var length = $tagBox.children('li').length;
+        event.preventDefault();
+        // 标签最多10个，超过10个无法再添加
+        if (length <= 11) {
+            $tagBox.append($('<li>' +
+                            '<input class="blog-tag" type="text" placeholder="填写标签"/>' +
+                            '<a href="#" class="delete-tag"><img src="image/close.png" alt="X" class="delete-icon"></a>' +
+                        '</li>'));
+
+        }else {
+            alert('标签最多只能添加10个！');
+        }
+        // 删除标签
+        $('.delete-tag').click(function (event) {
+            event.preventDefault();
+            $(this).parent().remove();
+        });
+    });
     ue.ready(function() {
         // 存为草稿
         $save.on('click', function(event) {
