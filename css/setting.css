@@ -7,37 +7,39 @@
 form {
     margin-top: 13px;
 }
-/*头像设置*/
-#upload-pic {
-    width: 50px;
-    height: 32px;
-    vertical-align: middle;
-    position: relative;
-    left: -60px;
-    opacity: 0;
-    z-index: 1;
-    cursor: pointer;
-    font-size: 0px;
-}
-#viewfile {
-    width: 250px;
-    height: 30px;
-    border: 1px solid #ccc;
-    background: #f9f9f9;
-    cursor: not-allowed;
-}
 /*选择文件按钮*/
 .head-setting {
-    min-width: 500px;
+    width: 464px;
+    position: relative;
 }
 .file-button {
-    vertical-align: middle;
+    vertical-align: top;
     width: 50px;
     height: 30px;
     border: 1px solid #ccc;
     border-left: none;
     background: #f9f9f9;
     font-size: 13px;
+}
+/*头像设置*/
+#upload-pic {
+    width: 50px;
+    height: 30px;
+    vertical-align: top;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
+    font-size: 0px;
+}
+#viewfile {
+    width: 414px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    cursor: not-allowed;
 }
 /*基本信息设置*/
 .input-box {

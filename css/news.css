@@ -10,18 +10,19 @@
 }
 /*文件上传部分*/
 .file-upload-box {
+    position: relative;
+    width: 300px;
 	margin: 15px 0;
 }
 #upload-pic {
     width: 50px;
-    height: 32px;
-	/*vertical-align: middle;*/
-    position: relative;
-    left: -60px;
+    height: 30px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
     opacity: 0;
 	z-index: 1;
 	cursor: pointer;
-    font-size: 0px;
 }
 #viewfile {
     vertical-align: top;
@@ -34,7 +35,7 @@
 /*选择文件按钮*/
 .file-button {
 	width: 50px;
-	height: 32px;
+	height: 30px;
 	border: 1px solid #ccc;
 	border-left: none;
 	background: #f9f9f9;

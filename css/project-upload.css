@@ -53,7 +53,7 @@
     float: right;
     margin-top: 40px;
 }
-.btn-submit a{
+.btn-submit a{5
     display: block;
     width: 130px;
     height: 33px;
@@ -69,31 +69,33 @@
     cursor: pointer;
 }
 /*文件上传*/
-.bootstrap-filestyle {
-    display: inline-block;
-    margin-right:  40px;
-    margin-bottom: 17px;
-    width: 300px;
-    border: 1px solid #ccc;
-    line-height: 30px;
+.file-upload-box {
+    position: relative;
 }
-.form-control {
-    margin: 0 !important;
-    width: 250px !important;
-    border: none !important;
-    border-right: 1px solid #ccc !important;
-    height: 34px !important;
+#app-icon {
+    width: 50px;
+    height: 30px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
+    font-size: 0px;
+}
+#viewfile {
+    vertical-align: top;
+    width: 345px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
     cursor: not-allowed;
 }
-
-.buttonText {
-    padding: 2px 5px;
-    margin-left: -4px;
+/*选择文件按钮*/
+.file-button {
+    width: 50px;
     height: 30px;
+    border: 1px solid #ccc;
     border-left: none;
-    font-size: 14px;
-    cursor: pointer;
-}
-:focus {
-    outline: none;
+    background: #f9f9f9;
 }
