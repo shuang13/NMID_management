@@ -15,6 +15,9 @@
     <!-- 弹出层样式 -->
     <link rel="stylesheet" href="css/jquery.notice.css">
     
+    <!-- makedown编辑器样式 -->
+    <link rel="stylesheet" href="simplemde/dist/simplemde.min.css"> 
+    
     <!-- jq -->
     <script src="js/jquery.min.js"></script>
 </head>
@@ -90,8 +93,22 @@
                             </li>
                         </ul>
                         
-                        <!-- 加载编辑器的容器 -->
-                        <script id="container" name="content" type="text/plain"></script> 
+                         <div id="editor-container">
+                            
+
+                            <!-- 加载编辑器的容器 -->
+                            <div id="text-editor" class="view">
+                                <script id="container" name="content" type="text/plain"></script> 
+                            </div>
+                            
+                            <!-- makedown -->
+                            <div id="markdown-editor" >
+                                <textarea name="" id="MyID"></textarea>
+                                
+                            </div>
+                            <div class="btn-change">更改编辑器</div>
+                            
+                        </div>
                         <div class="blog-btn">
                             <div class="btn-save">
                                 <a href="#">存为草稿</a>
@@ -113,10 +130,8 @@
     <script type="text/javascript" src="utf8-jsp/ueditor.config.js"></script>
     <!-- 编辑器源码文件 -->
     <script type="text/javascript" src="utf8-jsp/ueditor.all.js"></script>
-    <!-- 实例化编辑器 -->
-    <script type="text/javascript">
-        var ue = UE.getEditor('container');
-    </script>
+    <!-- makedown编辑器控制 -->
+    <script src="simplemde/dist/simplemde.min.js"></script>
     <!-- 博客上传控制 -->
     <script type="text/javascript" src="js/blog-upload.js"></script>
 </body>

@@ -21,7 +21,7 @@ a {
     height: 60px;
     border-bottom: 1px solid #000;
     background: #313239;
-    z-index: 99;
+    z-index: 9;
 }
 #top-bar .logo {
     margin: 20px;

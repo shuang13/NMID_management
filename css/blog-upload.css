@@ -26,7 +26,7 @@
     position: relative;
     float: left;
     margin-right: 18px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 .blog-tag-box li .delete-tag {
     position: absolute;
@@ -39,13 +39,15 @@
 }
 .add-tag {
     display: inline-block;
-    padding: 0 10px;
-    width: 90px;
-    height: 30px;
-    line-height: 30px;
+    width: 100px;
+    height: 33px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 33px;
     background: #313131;
     color: #fff;
     border-radius: 5px;
+    cursor: pointer;
 }
 .blog-tag {
     display: inline-block;
@@ -95,4 +97,24 @@ textarea {
 .btn-submit a:hover, .btn-save a:hover {
     outline: 1px solid #FFEA00;
     cursor: pointer;
+}
+.btn-change {
+    float: left;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 33px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 33px;
+    background: #313131;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#text-editor .editor-toolbar .fullscreen{
+    z-index: 999;
+}
+.view {
+    display: none;
 }
