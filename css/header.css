@@ -52,18 +52,15 @@ a {
 /*消息条数样式*/
 .message-count {
     display: inline-block;
+    position: absolute;
+    right: -2px;
+    top: 10px;
     height: 20px;
     width: 20px;
     line-height: 20px;
     text-align: center;
     background-color: #fe5621;
     color: white;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
     border-radius: 20px;
-    position: absolute;
-    right: -2px;
-    top: 10px;
+    font-size: 12px;
 }

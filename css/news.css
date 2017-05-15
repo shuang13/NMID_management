@@ -25,7 +25,6 @@
 	cursor: pointer;
 }
 #viewfile {
-    vertical-align: top;
 	width: 250px;
 	height: 30px;
 	border: 1px solid #ccc;
@@ -39,6 +38,7 @@
 	border: 1px solid #ccc;
 	border-left: none;
 	background: #f9f9f9;
+    vertical-align: middle;
 }
 /*提交按钮*/
 .news-btn {
