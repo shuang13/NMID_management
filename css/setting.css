@@ -52,7 +52,7 @@ form {
     flex-wrap: wrap;           
     justify-content:space-between;
 }
-    /*水平线*/
+/*水平线*/
 .setting-resume .input-box {
     padding-top: 41px;
     margin-top: 41px;
@@ -131,6 +131,11 @@ form {
 }
 /*列表部分样式*/
 .division {
+    display: inline-block;
+    color: #06A2E9;
+    margin: 0px 1px;
+}
+.operate-box a {
     color: #06A2E9;
 }
 /*添加用户页面样式*/

@@ -23,6 +23,7 @@
     opacity: 0;
 	z-index: 1;
 	cursor: pointer;
+    font-size: 0px;
 }
 #viewfile {
 	width: 250px;
