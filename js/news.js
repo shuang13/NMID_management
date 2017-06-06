@@ -9,6 +9,19 @@ $(document).ready(function() {
 		// 显示文件路径
 		$("#viewfile").val(this.value);
 	})
+    // 富文本编辑器和markdown编辑器切换
+    var simplemde = new SimpleMDE({ element: document.getElementById("MyID") });
+    
+    $('.btn-change').on('click', function () {
+        if ($('#text-editor').hasClass('view')) {
+            $('#text-editor').removeClass('view');
+            $('#markdown-editor').addClass('view');
+        }
+        else {
+            $('#text-editor').addClass('view');
+            $('#markdown-editor').removeClass('view');
+        }
+    })
 
 	// 按钮
 	// 存为草稿
