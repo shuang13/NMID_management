@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    var URLHead = '119.29.234.36:8080';
     var ue = UE.getEditor('container');
 
     var $title = $('#blog-title');
@@ -60,26 +61,26 @@ $(document).ready(function () {
             //获取html内容，返回: 
             var content = ue.getContent();
             var article = {
-                title: $title.val(),
-                type: $type.val(),
-                tag: $tag.val(),
-                content: content,
+                authorId: 222,
+                title: $('#blog-title').val(),
+                platform: $('#blog-type').val(),
+                names: $('.blog-tag').val(),
+                content: ue.getContent(),
             };
-            $.each(article,function(index,item) {
-                if(article[index] == ''){
-                    $.notice('博客上传提示：', '部分信息未填写！', undefined, 300, 150);  
-                }
-            });
-            $.ajax({
-                type: "POST",
-                url: "##",
-                data: article,
-                success: function(data){
-
-                $.notice('博客上传提示：', '发布成功！', undefined, 300, 150);
-                
-                }
-            });
+            if(article.title && article.content){
+                $.ajax({
+                    type: "POST",
+                    url: URLHead + '/blogs',
+                    data: article,
+                    success: function(data){
+                        $.notice('博客上传提示：', '发布成功！', undefined, 300, 150);
+                    }
+                });
+                 
+            }else {
+                $.notice('博客上传提示：', '部分信息未填写！', undefined, 300, 150); 
+            }
+            
         });
         
     });
