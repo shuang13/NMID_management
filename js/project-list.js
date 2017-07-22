@@ -1,7 +1,8 @@
 $(document).ready(function () {
+    var URLHead = '119.29.234.36:8080/nmid';
     $.ajax({
             type: "POST",
-            url: "../json/project-list",
+            url: URLHead + "/works/unpass",
             success: function(data){
                 if(typeof data == 'string') {
                     data = JSON.parse(data);
