@@ -45,5 +45,9 @@
 }
 .pagination-box {
     border: 1px solid red;
+    width: 400px;
+    height: 80px;
+    margin: 0 auto;
+    text-align: center;
 }
 
