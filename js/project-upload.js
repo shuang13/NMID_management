@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var URLHead = '119.29.234.36:8080/nmid';
+    var URLHead = 'http:119.29.234.36:8080/nmid';
     // $(':file').filestyle({buttonText: "浏览"});
     var $file_icon = $('#app-icon');
     var $member = $('#project-member');

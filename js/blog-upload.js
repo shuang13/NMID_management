@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var URLHead = '119.29.234.36:8080';
+    var URLHead = 'http:119.29.234.36:8080';
     var ue = UE.getEditor('container');
 
     var $title = $('#blog-title');

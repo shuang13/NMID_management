@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var URLHead = '119.29.234.36:8080/nmid';
+    var URLHead = 'http:119.29.234.36:8080/nmid';
     $.ajax({
             type: "POST",
             url: URLHead + "/works/unpass",
