@@ -3,6 +3,7 @@
     background: #313239;
 }
 #page-content {
+    min-width: 1000px;
     padding-left: 210px;
     background: #F9F9F9;
 }
