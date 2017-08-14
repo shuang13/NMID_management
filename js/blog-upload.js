@@ -67,19 +67,20 @@ $(document).ready(function () {
                 names: $('.blog-tag').val(),
                 content: ue.getContent(),
             };
-            if(article.title && article.content){
+            // if(article.title && article.content){
                 $.ajax({
                     type: "POST",
                     url: URLHead + '/blogs',
+                    dataType: 'jsonp',
                     data: article,
                     success: function(data){
                         $.notice('博客上传提示：', '发布成功！', undefined, 300, 150);
                     }
                 });
                  
-            }else {
-                $.notice('博客上传提示：', '部分信息未填写！', undefined, 300, 150); 
-            }
+            // }else {
+            //     $.notice('博客上传提示：', '部分信息未填写！', undefined, 300, 150); 
+            // }
             
         });
         

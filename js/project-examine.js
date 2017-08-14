@@ -1,16 +1,16 @@
 $(document).ready(function () {
     var URLHead = 'http:119.29.234.36:8080/nmid';
-    $.ajax({
-        type: "GET",
-        url: URLHead + "/works/unpass",
-        success: function(data){
+    $.get(URLHead + "/works/unpass", {
+        page: 1,
+        page_size: 16,
+    }, function (data) {
             if(typeof data == 'string') {
                 data = JSON.parse(data);
             }
             console.log(data.body.list.length);
             // 引用jqpaginator库实现分页功能
             $.jqPaginator('.pagination', {
-                totalPages: 10,
+                totalPages: Math.ceil(data.body.num/data.body.list.length),
                 visiblePages: 4,
                 currentPage: 1,
                 first: '<li class="first"><a href="javascript:void(0);">首页</a></li>',
@@ -33,8 +33,7 @@ $(document).ready(function () {
 
             // 操作
             // operate();
-            
-        }
+
     });
 
     // 解析表格数据

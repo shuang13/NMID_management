@@ -74,6 +74,7 @@ $(document).ready(function() {
                 $tr.append('<td>' + data[i][$ths.eq(j).attr('data-name')] + '</td');  
             }
             $tr.append( '<td class="operate">' +
+                            '<a href="#">编辑</a> | ' +
                             '<a href="#">编辑</a>' +
                         '</td>');
             $frag.append($tr);

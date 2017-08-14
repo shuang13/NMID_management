@@ -74,8 +74,8 @@ $(document).ready(function() {
                 $tr.append('<td>' + data[i][$ths.eq(j).attr('data-name')] + '</td');  
             }
             $tr.append( '<td class="operate">' +
-                            '<a href="#">编辑</a> | ' +
-                            '<a href="#">删除</a>' +
+                            '<a href="#">通过</a> | ' +
+                            '<a href="#">不通过</a>' +
                         '</td>');
             $frag.append($tr);
         }
