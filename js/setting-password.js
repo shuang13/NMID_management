@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	var URLHead = 'http:119.29.234.36:8080/nmid';
 	var $priKey = $('#primary-password');
 	var $nowKey = $('#new-password');
 	// 插入到弹出框的内容
@@ -15,10 +16,10 @@ $(document).ready(function() {
 	$('.setting-password .btn-submit a').on('click', function(event) {
 		event.preventDefault();
 		// 判断密码是否为空
-		if(!$priKey.val()||!$priKey.val()) {
+		if(!$priKey.val()||!$nowKey.val()) {
 			$.notice('修改密码提示：', '密码不能为空！', undefined, 300, 150);
 			return;			
-		}else if($priKey.val().length < 6||$priKey.val() < 6) {
+		}else if($priKey.val().length < 6||$nowKey.val().length < 6) {
 			$.notice('修改密码提示：', '密码不能小于6位！', undefined, 300, 150);
 			return;	
 		}else {
@@ -27,8 +28,8 @@ $(document).ready(function() {
             $('.jq-notice-container .true').on('click', function () {
             	$.ajax({
                 type: "POST",
-                url: "",
-                data: {},
+                url: URLHead + '',
+                data: {'':$nowKey.val()},
                 success: function (data) {
                     if(typeof data == 'string') {
                         data = JSON.parse(data);
