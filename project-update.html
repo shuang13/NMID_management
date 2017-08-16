@@ -81,8 +81,12 @@
                     <form action="##">
                         <div class="input-box">
                             <div class="box-title">产品基本信息</div>
-                            <label for="app-icon">应用图标</label>
-                            <input id="app-icon" type="file" />
+                            <div class="file-upload-box">
+                                <label for="app-icon">应用图标</label>
+                                <!-- 文件路径预览 -->
+                                <input type="text" id="viewfile" disabled="true"/><button class="file-button">浏览</button>
+                                <input type="file" id="app-icon" accept=".jpg,.jpeg,.gif,.png"/>  
+                            </div>
                             <input id="project-member" type="text" placeholder="项目组成员" />
                             <input id="project-name" type="text" placeholder="项目组名称" />
                             <input id="app-size" type="text" placeholder="大小" />
