@@ -49,22 +49,24 @@ $(document).ready(function () {
     function parseTable(data) {
         window.formdata = [];
         for(var i = 0; i < data.length; i++) {
+            var members = [];
+            for (let j = 0; j < data[i].authors.length; j++) {        
+                members.push(data[i].authors[j].name);
+            }
             window.formdata.push({
                 "order-number": ((i + ((currentPage-1)*16)) + 1),
                 "name": data[i].name,
                 "system": data[i].support,
+                 "authors": members.join('、'),
                 // "type": data[i][4],
+                // "authors": 
                 "version": data[i].version,
                 "update-time": getdate(data[i].time),
                 // "status": data[i][7]
-            });
-            console.log(data[i].authors.length);
-            for (let j = 0; j < data[i].authors.length; j++) {
-                window.formdata.push({
-                    "authors": data[i].authors[j].name.join('、')
+                "id": data[i].id
                 }); 
-            }
         }
+        
     }
     // 绘制表格
     function drawTable (data, callback) {
@@ -81,13 +83,14 @@ $(document).ready(function () {
             }
             $tr.append( '<td class="operate">' +
                             '<a href="project-update.html?id=' + 
-                            data[i]['order-number'] + '">查看</a>' +
+                            data[i].id + '">查看</a>' +
+                            " | " +
                             '<a href="project-update.html?id=' + 
-                            data[i]['order-number'] + '">更新</a>' +
+                            data[i].id + '">更新</a>' +
                         '</td>');
             $frag.append($tr);
         }
         $table.find('tbody').empty().append($frag);
-
     };
+
 });
