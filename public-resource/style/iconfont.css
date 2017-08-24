@@ -1,0 +1,59 @@
+#top-bar .logo {
+    background: url(../image/logo.png) no-repeat;
+}
+#top-bar .message i {
+    background: url(../image/message.png) no-repeat;
+}
+/*导航栏背景*/
+#page-content .nav {
+    background: url(../image/bg.png) 0 0 repeat-x;
+}
+/*导航active*/
+#page-content .nav .nav-active {
+    background: url(../image/bg-active.png) 0 0 repeat-x;
+}
+/*label上的删除图标*/
+.input-box .box-title i {
+    display: inline-block;
+    margin-left: 100px;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    background: url(../image/Icon_Trash.png) 0 0 no-repeat;
+    cursor: pointer;
+}
+/*用户头像*/
+.user-image i {
+    display: block;
+    width: 130px;
+    height: 130px;
+    background: url(../image/user.png) center no-repeat;
+}
+/*侧栏用户设置*/
+.sidebar-nav li:nth-child(1) i {
+    background: url(../image/Icon_User.png) center no-repeat;
+}
+/*侧栏项目管理*/
+.sidebar-nav li:nth-child(2) i {
+    background: url(../image/Icon_Folder.png) center no-repeat;
+}
+/*侧栏博客管理*/
+.sidebar-nav li:nth-child(3) i {
+    background: url(../image/Icon_List.png) center no-repeat;
+}
+/*侧栏新闻管理*/
+.sidebar-nav li:nth-child(4) i {
+    background: url(../image/Icon_News.png) center no-repeat;
+}
+/*侧栏加入我们*/
+.sidebar-nav li:nth-child(5) i {
+    background: url(../image/Icon_Dialogue.png) center no-repeat;
+}
+/*loading*/
+#loading{
+    display:block;
+    height:32px;
+    width:32px;
+    margin:30px;
+    background:url(../image/loading.png) no-repeat;
+}

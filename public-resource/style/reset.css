@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+body {
+    font-family: "Adobe 黑体 Std";
+    background: #F9F9F9;
+}
+li {
+    float: left;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}

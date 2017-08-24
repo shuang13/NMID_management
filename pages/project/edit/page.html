@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>项目更新</title>
+    
+    <!-- 基础样式 -->
+    <link rel="stylesheet" href="../../../public-resource/style/base.css">
+    <!-- 弹出层样式 -->
+    <link rel="stylesheet" href="../../../lib/notice/css/jquery.notice.css">
+    <!-- jq -->
+    <script src="../../../lib/jq/jquery.min.js"></script>
+
+</head>
+<body>
+    <!-- 顶栏 -->
+    <header id="top-bar">
+        <img class="logo" src="../../../public-resource/image/logo.png" alt="" />
+        <ul class="top-nav">
+            <li class="message">
+                <img src="../../../public-resource/image/message.png" alt="消息">
+                <span class="message-count">98</span>
+            </li>
+        </ul>
+    </header>
+    <div id="content">
+        <!-- 侧栏 -->
+        <div id="sidebar">
+            <div class="user-image">
+                <i></i>
+                <p class="name">张延伟</p>
+            </div>
+            <ul class="sidebar-nav">
+                <li>
+                    <a href="../../user/setting/page.html">
+                        <p><i></i>账户设置</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="../../project/list/page.html">
+                        <p><i></i>项目管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../blog/list/page.html">
+                        <p><i></i>博客管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../news/list/page.html">
+                        <p><i></i>新闻管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../join/examine/page.html">
+                        <p><i></i>加入我们</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- 标签页 -->
+        <div id="page-content">
+            <div class="header">
+                <p>项目更新</p>
+            </div>
+            <div id="inner-content">
+
+                <ul class="nav">
+                   <li><a href="../list/page.html">项目列表</a></li> 
+                   <li><a href="../upload/page.html">项目上传</a></li> 
+                   <li><a href="../examine/page.html">项目审核</a></li> 
+                   <li><a class="nav-active" href="../edit/page.html">项目更新</a></li> 
+                </ul>
+                <div class="main">
+                    <form action="##">
+                        <div class="input-box">
+                            <div class="box-title">产品基本信息</div>
+                            <div class="file-upload-box">
+                                <label for="app-icon">应用图标</label>
+                                <!-- 文件路径预览 -->
+                                <input type="text" id="viewfile" disabled="true"/><button class="file-button">浏览</button>
+                                <input type="file" id="app-icon" accept=".jpg,.jpeg,.gif,.png"/>  
+                            </div>
+                            <input id="project-member" type="text" placeholder="项目组成员" />
+                            <input id="project-name" type="text" placeholder="项目组名称" />
+                            <input id="app-size" type="text" placeholder="大小" />
+                            <input id="app-version" type="text" placeholder="版本" />
+                            <input id="app-system" type="text" placeholder="系统支持" />
+                        </div>
+                        <div class="input-box">
+                            <div class="box-title">产品简介</div>
+                            <textarea name="" id="app-intro" placeholder="产品简介"></textarea>
+                        </div>
+                        <div class="input-box">
+                            <div class="box-title">功能介绍</div>
+                            <textarea name="" id="app-function" placeholder="功能介绍"></textarea>
+                        </div>
+                        <div class="input-box">
+                            <div class="box-title">产品特色</div>
+                            <textarea name="" id="app-feature" placeholder="产品特色"></textarea>
+                        </div>
+                        <div class="input-box">
+                            <div class="box-title">更新说明<i></i></div>
+                            <textarea name="" id="update-instruction" placeholder="更新说明"></textarea>
+                        </div>
+                        <div class="input-box">
+                            <div class="box-title">产品截图</div>
+                            <input id="app-screenshot" type="file" />
+                        </div>
+                        <div class="input-box">
+                            <div class="box-title">应用上传<i></i></div>
+                            <input id="app-upload" type="file" /> 
+                        </div>
+                        <div class="input-box">
+                            <div class="box-title">产品链接<i></i></div>
+                            <input id="app-link" type="text" placeholder="产品链接" />
+                        </div>
+                        <div class="btn-submit">
+                            <a href="#">发布</a>
+                        </div>
+                    
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 弹出层配置文件 -->
+    <script type="text/javascript" src="../../../lib/notice/jquery.notice.js"></script>
+    <!-- 公共逻辑 -->
+    <script src="../../../public-resource/common/js/common.js"></script>
+    <!-- 设置页面js文件 -->
+    <script src="page.js"></script>
+</body>
+</html>

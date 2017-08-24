@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻上传</title>
+    
+    <!-- 基础样式 -->
+    <link rel="stylesheet" href="../../../public-resource/style/base.css">
+    <!-- 弹出层样式 -->
+    <link rel="stylesheet" href="../../../lib/notice/css/jquery.notice.css"> 
+    <!-- makedown编辑器样式 -->
+    <link rel="stylesheet" href="../../../lib/simplemde/dist/simplemde.min.css"> 
+    <!-- jq -->
+    <script src="../../../lib/jq/jquery.min.js"></script>
+</head>
+<body>
+    <!-- 顶栏 -->
+    <header id="top-bar">
+        <img class="logo" src="image/logo.png" alt="" />
+        <ul class="top-nav">
+            <li class="message">
+                <img src="image/message.png" alt="消息">
+                <span class="message-count">98</span>
+            </li>
+        </ul>
+    </header>
+    <div id="content">
+        <!-- 侧栏 -->
+        <div id="sidebar">
+            <div class="user-image">
+                <i></i>
+                <p class="name">张延伟</p>
+            </div>
+            <ul class="sidebar-nav">
+                <li>
+                    <a href="../../user/setting/page.html">
+                        <p><i></i>账户设置</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../project/list/page.html">
+                        <p><i></i>项目管理</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="../../blog/list/page.html">
+                        <p><i></i>博客管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../news/list/page.html">
+                        <p><i></i>新闻管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../join/examine/page.html">
+                        <p><i></i>加入我们</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- 标签页 -->
+        <div id="page-content">
+            <div class="header">
+                <p>博客管理</p>
+            </div>
+            <div id="inner-content">
+                <ul class="nav">
+                   <li><a href="../list/page.html">我的博客</a></li> 
+                   <li class="nav-active"><a href="../upload/page.html">博客上传</a></li> 
+                </ul>
+                <div class="main">
+                    <form action="#">
+                        <input id="blog-title" type="text" placeholder="标题" />
+                        <select id="blog-type">
+                            <option value="分类选择">分类选择</option>
+                            <option value="客户端平台">客户端平台</option>
+                            <option value="服务器平台">服务器平台</option>
+                            <option value="硬件平台">硬件平台</option>
+                            <option value="培训生平台">培训生平台</option>
+                            <option value="孵化团队">孵化团队</option>
+                        </select>
+                        <!-- 标签 -->
+                        <ul class="blog-tag-box">
+                            <li>
+                                <a href="#" class="add-tag">添加标签</a>
+                            </li>
+                        </ul>
+                        
+                         <div id="editor-container">
+                            
+
+                            <!-- 加载编辑器的容器 -->
+                            <div id="text-editor" class="view">
+                                <script id="container" name="content" type="text/plain"></script> 
+                            </div>
+                            
+                            <!-- makedown -->
+                            <div id="markdown-editor" >
+                                <textarea name="" id="MyID"></textarea>
+                                
+                            </div>
+                            <div class="btn-change">更改编辑器</div>
+                            
+                        </div>
+                        <div class="blog-btn">
+                            <div class="btn-save">
+                                <a href="#">存为草稿</a>
+                            </div>
+                            <div class="btn-submit">
+                                <a href="#">立即发布</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 弹出层配置文件 -->
+    <script type="text/javascript" src="js/jquery.notice.js"></script>
+    <!-- 配置文件 -->
+    <script type="text/javascript" src="utf8-jsp/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="utf8-jsp/ueditor.all.js"></script>
+    <!-- makedown编辑器控制 -->
+    <script src="simplemde/dist/simplemde.min.js"></script>
+    <!-- 博客上传控制 -->
+    <script type="text/javascript" src="js/blog-upload.js"></script>
+</body>
+</html>

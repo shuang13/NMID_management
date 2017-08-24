@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简历设置</title>
+    
+    <!-- 基础样式 -->
+    <link rel="stylesheet" href="../../../public-resource/style/base.css">
+    <!-- 弹出层样式 -->
+    <link rel="stylesheet" href="../../../lib/notice/css/jquery.notice.css"> 
+    <!-- jq -->
+    <script src="../../../lib/jq/jquery.min.js"></script>
+</head>
+<body>
+    <!-- 顶栏 -->
+    <header id="top-bar">
+        <img class="logo" src="image/logo.png" alt="" />
+        <ul class="top-nav">
+            <li class="message">
+                <img src="image/message.png" alt="消息">
+                <span class="message-count">98</span>
+            </li>
+        </ul>
+    </header>
+    <div id="content">
+        <!-- 侧栏 -->
+        <div id="sidebar">
+            <div class="user-image">
+                <i></i>
+                <p class="name">张延伟</p>
+            </div>
+            <ul class="sidebar-nav">
+            <li class="active">
+                <a href="../../user/setting/page.html">
+                    <p><i></i>账户设置</p>
+                </a>
+            </li>
+            <li>
+                <a href="../../project/list/page.html">
+                    <p><i></i>项目管理</p>
+                </a>
+            </li>
+            <li>
+                <a href="../../blog/list/page.html">
+                    <p><i></i>博客管理</p>
+                </a>
+            </li>
+            <li>
+                <a href="../../news/list/page.html">
+                    <p><i></i>新闻管理</p>
+                </a>
+            </li>
+            <li>
+                <a href="../../join/examine/page.html">
+                    <p><i></i>加入我们</p>
+                </a>
+            </li>
+        </ul>
+        </div>
+        <!-- 标签页 -->
+        <div id="page-content">
+            <div class="header">
+                <p>账户设置</p>
+            </div>
+            <div id="inner-content">
+                <ul class="nav">
+                   <li><a href="../setting/page.html">基本设置</a></li> 
+                   <li class="nav-active"><a href="../resume/page.html">简历设置</a></li> 
+                   <li><a href="../log/page.html">登录日志</a></li> 
+                   <li><a href="../list/page.html">用户列表</a></li> 
+                   <li><a href="../add/page.html">增加用户</a></li> 
+                   <li><a href="../password/page.html">密码修改</a></li>
+                </ul>
+                <div class="main setting-resume">
+                    <form action="#">
+                        
+                        <div class="input-box">
+                            <div class="box-title">担任职务<i></i></div>
+                            <textarea name="" id="job" placeholder="职务1：说明"></textarea>
+                        </div>
+                        
+                        <div class="input-box">
+                            <div class="box-title">能力技能<i></i></div>
+                            <textarea name="" id="skill" placeholder="知识技能了解说明"></textarea>
+                        </div>
+
+                        <div class="input-box">
+                            <div class="box-title">项目经历<i></i></div>
+                            <textarea name="" id="project" placeholder="时间：项目（参与项目说明）"></textarea>
+                        </div>
+
+                        <div class="input-box">
+                            <div class="box-title">实践经历<i></i></div>
+                            <textarea name="" id="practice" placeholder="时间：经历（经历说明）"></textarea>
+                        </div>
+    
+                        <div class="input-box">
+                            <div class="box-title">获奖情况<i></i></div>
+                            <textarea name="" id="honor" placeholder="时间：获奖说明"></textarea>
+                        </div>
+                        
+                        <div class="input-box">
+                            <div class="box-title">添加标签<i></i></div>
+                        </div>
+    
+                        <div class="btn-submit">
+                            <a href="#">发布</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 设置页面js文件 -->
+    <script src="js/setting-resume.js"></script>
+    <!-- 弹出层配置文件 -->
+    <script type="text/javascript" src="js/jquery.notice.js"></script>
+</body>
+</html>

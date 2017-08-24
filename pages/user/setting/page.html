@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>账户设置</title>
+
+    <!-- 基础样式 -->
+    <link rel="stylesheet" href="../../../public-resource/style/base.css">
+    <!-- 弹出层样式 -->
+    <link rel="stylesheet" href="../../../lib/notice/css/jquery.notice.css"> 
+    <!-- jq -->
+    <script src="../../../lib/jq/jquery.min.js"></script>
+</head>
+<body>
+    <!-- 顶栏 -->
+    <header id="top-bar">
+        <img class="logo" src="../../../public-resource/image/logo.png" alt="" />
+        <ul class="top-nav">
+            <li class="message">
+                <img src="image/message.png" alt="消息">
+                <span class="message-count">98</span>
+            </li>
+        </ul>
+    </header>
+    <!-- 侧栏 -->
+    <div id="sidebar">
+        <div class="user-image">
+            <i></i>
+            <p class="name">张延伟</p>
+        </div>
+        <ul class="sidebar-nav">
+            <li class="active">
+                <a href="../../user/setting/page.html">
+                    <p><i></i>账户设置</p>
+                </a>
+            </li>
+            <li>
+                <a href="../../project/list/page.html">
+                    <p><i></i>项目管理</p>
+                </a>
+            </li>
+            <li>
+                <a href="../../blog/list/page.html">
+                    <p><i></i>博客管理</p>
+                </a>
+            </li>
+            <li>
+                <a href="../../news/list/page.html">
+                    <p><i></i>新闻管理</p>
+                </a>
+            </li>
+            <li>
+                <a href="../../join/examine/page.html">
+                    <p><i></i>加入我们</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div id="content">
+        <!-- 标签页 -->
+        <div id="page-content">
+            <div class="header">
+                <p>账户设置</p>
+            </div>
+            <div id="inner-content">
+                <ul class="nav">
+                   <li class="nav-active"><a href="../setting/page.html">基本设置</a></li> 
+                   <li><a href="../resume/page.html">简历设置</a></li> 
+                   <li><a href="../log/page.html">登录日志</a></li> 
+                   <li><a href="../list/page.html">用户列表</a></li> 
+                   <li><a href="../add/page.html">增加用户</a></li> 
+                   <li><a href="../password/page.html">密码修改</a></li>
+                </ul>
+                <div class="main">
+                    <!-- 修改个人资料 -->
+                    <div class="information-setting">
+                        <p>修改个人资料</p>
+                        <img src="../../../public-resource/image/user.png" alt="头像预览" class="head-view" />
+                        <form action="#" enctype="multipart/form-data">
+                            <!-- 头像设置 -->
+                            <div class="head-setting">
+                                <!-- 文件路径预览 -->
+                                <input type="text" id="viewfile" disabled="true"/><button class="file-button">浏览</button>
+                                <input type="file" id="upload-pic" accept=".jpg,.jpeg,.gif,.png"/>  
+                            </div>
+                            <!-- 基本信息设置 -->
+                            <div class="input-box infor-setting">
+                                <input type="text" placeholder="姓名" id="user-name"/>
+                                <input type="text" placeholder="电话" id="user-telephone"/>
+                                <input type="text" placeholder="邮箱" id="user-email"/>
+                                <input type="text" placeholder="微博" id="user-weibo"/>
+                            </div>
+                            <div class="input-box">
+                                <textarea id="introduction" cols="30" rows="10" placeholder="个人简介"></textarea>
+                            </div>
+                            <div class="btn-submit" >
+                                <a href="#" >发布</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 弹出层配置文件 -->
+    <script type="text/javascript" src="../../../lib/notice/js/jquery.notice.js"></script>
+    <!-- 公共逻辑 -->
+    <script src="../../../common/js/common.js"></script>
+
+    <!-- 设置页面js文件 -->
+    <script src="page.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+#page-content .nav {
+    margin: 46px 0 50px 39px;
+    height: 46px;
+    line-height: 46px;
+    border-top: 1px solid #E4E4E4;
+}
+#page-content .nav a {
+    display: block;
+    width: 100px;
+    height: 46px;
+    text-align: center;
+    font-size: 18px;
+}

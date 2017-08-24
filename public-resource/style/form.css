@@ -1,0 +1,111 @@
+/*水平线*/
+.setting-resume .input-box {
+    padding-top: 41px;
+    margin-top: 41px;
+    border-top: 1px solid #ccc;
+}
+.input-box .box-title {
+    display: block;
+    position: absolute;
+    top: -16px;
+    padding-left: 12px;
+    width: 186px;
+    height: 32px;
+    background: #313239;
+    font-size: 14px;
+    color: #fff;
+    line-height: 32px;
+    overflow: hidden;
+} 
+.input-box input[type=text] {
+    margin-bottom: 30px;
+    padding-left: 10px;
+    width: 464px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: #F9F9F9;
+
+}
+.input-box textarea {
+    margin-bottom: 17px;
+    padding: 10px;
+    width: 100%;
+    height: 180px;
+    background: #F9F9F9;
+    border: 1px solid #ccc;
+    resize: none;
+}
+/*基本信息设置*/
+.input-box {
+    position: relative;
+    padding-top: 30px;
+
+}
+.infor-setting {
+    display:flex;
+    flex-wrap: wrap;           
+    justify-content:space-between;
+}
+
+/*密码修改*/
+.password-setting {
+    margin-top: 60px;
+}
+
+.password-setting .input-box input[type=text] {
+    display: block;
+}
+
+.btn-password a{
+    position: static;
+}
+/*列表部分样式*/
+.division {
+    display: inline-block;
+    color: #06A2E9;
+    margin: 0px 1px;
+}
+.operate-box a {
+    color: #06A2E9;
+}
+/*添加用户页面样式*/
+.setting-add-user .input-box input[type=text] {
+    display: block;
+}
+.setting-add-user input[type=radio],input[type=checkbox] {
+    margin: 18px 10px 30px 0;
+}
+.option-text {
+    display: inline-block;
+    width: 135px;
+}
+/*头像预览大小*/
+.information-setting .head-view {
+    width: 80px;
+    height: 80px;
+    margin-top: 20px;
+}
+form {
+    margin-top: 13px;
+}
+
+/*头像设置*/
+#upload-pic {
+    width: 50px;
+    height: 30px;
+    vertical-align: top;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
+    font-size: 0px;
+}
+#viewfile {
+    width: 414px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    cursor: not-allowed;
+}
