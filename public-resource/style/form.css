@@ -109,3 +109,18 @@ form {
     background: #f9f9f9;
     cursor: not-allowed;
 }
+/*新闻标题*/
+.infor-setting .news-title {
+    width: 100%;
+    margin-bottom: 30px;
+    padding-left: 10px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: #F9F9F9;
+}
+.news-file .input-group input {
+    margin-bottom: 20px;
+    width: 250px;
+    height: 30px;
+
+}

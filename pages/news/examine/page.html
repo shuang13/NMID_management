@@ -14,10 +14,10 @@
 <body>
     <!-- 顶栏 -->
     <header id="top-bar">
-        <img class="logo" src="image/logo.png" alt="" />
+        <i class="logo"></i>
         <ul class="top-nav">
             <li class="message">
-                <img src="image/message.png" alt="消息">
+                <i></i>
                 <span class="message-count">98</span>
             </li>
         </ul>
@@ -76,43 +76,24 @@
                                 <th data-name="order-number">序号</th>
                                 <th class="news-title" data-name="title">标题</th>
                                 <th data-name="update-time">最后修改时间</th>
+                                <th data-name="status">状态</th>
                                 <th data-name="operation">操作</th>
                             </tr>
-<!--                             <tr>
-                                <td>1</td>
-                                <td>研究中心团队成员在第二届全国高校移动互联网应用开发创新大赛取得二等奖</td>
-                                <td>2016-01-23 9：00</td>
-                                <td>2016-01-23 9：00</td>
-                                <td>待审核</td>
-                                <td class="operate">
-                                    <a href="##">修改</a>
-                                    <a href="##">删除</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>研究中心团队成员在第二届全国高校移动互联网应用开发创新大赛取得二等奖</td>
-                                <td>2016-01-23 9：00</td>
-                                <td>2016-01-23 9：00</td>
-                                <td>已发布</td>
-                                <td class="operate">
-                                    <a href="##">修改</a>
-                                    <a href="##">删除</a>
-                                </td>
-                            </tr> -->
                         </thead>
                         <tbody></tbody>
                     </table>
-                    <div class="pagination-box">
-                        <ul class="pagination"></ul>
-                    </div>
+                    <div id="pagination"></div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- 弹出层配置文件 -->
+    <script src="../../../lib/notice/jquery.notice.js"></script>
     <!-- 分页 -->
-    <script src="js/jqPaginator.js"></script> 
-    <!-- 新闻 -->
-    <script src="js/news-review.js"></script> 
+    <script src="../../../lib/jqueryPagination/js/jquery.pagination.min.js"></script>
+    <!-- 公共逻辑 -->
+    <script src="../../../utils/utils.js"></script>
+    <!-- 设置页面js文件 -->
+    <script src="page.js"></script>
 </body>
 </html>

@@ -16,10 +16,8 @@ var parseData = function (data) {
             "version": data[i].version,
             "update-time": utils.getdate(data[i].time),
             "status": '未审核', 
-            "operation": '<a href="project-update.html?id=' + 
-                        data[i].id + '">通过</a>' +" | " +
-                        '<a href="project-update.html?id=' + 
-                        data[i].id + '">不通过</a>' 
+            "operation": '<a class="btn-examine" href="##">进行审核</a>'
+                         
         }); 
     }
     return formdata;
@@ -55,13 +53,71 @@ var pagination = function (totalPage) {
                         var new_data = parseData(aaData);
                                         
                         // 根据解析的结果，绘制表格
-                        utils.drawTable(new_data, '../edit/page.html');
+                        utils.drawTable(new_data);
                     }
                 }
             });
         }
     });
 }
+var examine = function(event) {
+        event.preventDefault();
+        var $this = $(this);
+        $.notice('提示！', [
+            '<div class="discription_dialog">是否通过此栏目!</div>',
+            '<div class="divOperation">',
+                '<span class="true btn btn-danger">通过</span>',
+                '<span class="false btn btn-default">不通过</span>',
+            '</div>'
+            ].join(''),
+            function () {
+                var $context = $('.jq-notice-context');
+                // 参数
+                var ajaxArgs = {
+                    id: $this.closest('tr').attr('data-id')
+                }
+                $context.find('.true').on('click', function (event) {
+                    event.preventDefault();
+                    $.ajax({
+                        type: "POST",
+                        url: utils.URLHead + '/works/' + ajaxArgs.id + '/check',
+                        beforeSend: utils.loading($('.jq-notice-context')),
+                        data: ajaxArgs,
+                        success: function (data) {
+                            if(typeof data == 'string') {
+                                data = JSON.parse(data);
+                            }
+                            var status = data.code;
+                            if (status == 200) {
+                                $('.jq-notice-context').html('审核成功!');
+                                setTimeout("location.reload()",1000); 
+                            }
+                        }
+                    });    
+                    
+                });
+                $context.find('.false').on('click', function () {
+                    event.preventDefault();
+                    $.ajax({
+                        type: "POST",
+                        url: utils.URLHead + '/works/' + ajaxArgs.id,
+                        beforeSend: utils.loading($('.jq-notice-context')),
+                        data: ajaxArgs,
+                        success: function (data) {
+                            if(typeof data == 'string') {
+                                data = JSON.parse(data);
+                            }
+                            var status = data.code;
+                            if (status == 200) {
+                                $('.jq-notice-context').html('审核成功!');
+                                setTimeout("location.reload()",1000); 
+                            }
+                        }
+                    });
+                });
+            }
+        );
+    }
 $(document).ready(function () {
 
     $.ajax({
@@ -82,8 +138,10 @@ $(document).ready(function () {
                 var new_data = parseData(aaData);
                                 
                 // 根据解析的结果，绘制表格
-                utils.drawTable(new_data, '../edit/page.html');
+                utils.drawTable(new_data);
                 pagination(pageNum);
+                // 项目审核
+                $('.btn-examine').on('click', examine);
             }
         }
     });

@@ -101,6 +101,7 @@
 .jq-notice-context .btn {
     width: 55px;
     height: 25px;
+    padding: 5px 20px;
     background: #408ac9;
     color: #fff;
     border: 1px solid #408ac9;
@@ -108,4 +109,8 @@
     margin: 0 10px;
     outline: none;
     cursor: pointer;
+}
+.divOperation {
+    margin-top: 50px;
+    text-align: center;
 }

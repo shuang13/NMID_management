@@ -16,7 +16,7 @@ var parseData = function (data) {
             "version": data[i].version,
             "update-time": utils.getdate(data[i].time),
             "status": '已审核',
-            "operation": '<a href="../edit/page.html?id=' + 
+            "operation": '<a href="../visit/page.html?id=' + 
                         data[i].id + '">查看</a>' +" | " +
                         '<a href="../edit/page.html?id=' + 
                         data[i].id + '">更新</a>' 
@@ -55,7 +55,7 @@ var pagination = function (totalPage) {
                         var new_data = parseData(aaData);
                                         
                         // 根据解析的结果，绘制表格
-                        utils.drawTable(new_data, '../edit/page.html');
+                        utils.drawTable(new_data);
                     }
                 }
             });
@@ -82,7 +82,7 @@ $(document).ready(function () {
                 var new_data = parseData(aaData);
                                 
                 // 根据解析的结果，绘制表格
-                utils.drawTable(new_data, '../edit/page.html');
+                utils.drawTable(new_data);
                 pagination(pageNum);
             }
         }

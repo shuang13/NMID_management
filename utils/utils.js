@@ -33,7 +33,7 @@ var Utils = function () {
         return true;
     }
     // 绘制表格
-    utils.drawTable = function (data, operate_url) {
+    utils.drawTable = function (data) {
         var $frag = $(document.createDocumentFragment());
         var $table = $('table');
         var $ths = $table.find('th');
