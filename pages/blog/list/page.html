@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="../../../public-resource/style/base.css">
     <!-- 弹出层样式 -->
     <link rel="stylesheet" href="../../../lib/notice/css/jquery.notice.css"> 
+    <!-- 分页样式 -->
+    <link rel="stylesheet" href="../../../lib/jqueryPagination/css/jquery.pagination.css">
     <!-- jq -->
-    <script src="../../../lib/jq/jquery.min.js"></script> 
+    <script src="../../../lib/jq/jquery.min.js"></script>
 </head>
 <body>
     <!-- 顶栏 -->
@@ -72,27 +74,28 @@
                     <table cellspacing="0">
                         <thead>
                             <tr>
-                                <th data-name="classify">分类</th>
+                                <th data-name="order-number">序号</th>
                                 <th data-name="tag">标签</th>
                                 <th data-name="title">标题</th>
                                 <th data-name="status">状态</th>
                                 <th data-name="time">发布时间</th>
-                                <th data-name="modify">最后修改</th>
                                 <th data-name="operation">操作</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
                     </table>
-                    <div class="pagination-box">
-                        <ul class="pagination"></ul>
-                    </div>
+                    <div id="pagination"></div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- 弹出层配置文件 -->
+    <script src="../../../lib/notice/jquery.notice.js"></script>
     <!-- 分页 -->
-    <script src="js/jqPaginator.js"></script>
-    <!-- 我的博客控制 -->
-    <script src="js/myblog.js"></script>
+    <script src="../../../lib/jqueryPagination/js/jquery.pagination.min.js"></script>
+    <!-- 公共逻辑 -->
+    <script src="../../../utils/utils.js"></script>
+    <!-- 设置页面js文件 -->
+    <script src="page.js"></script>
 </body>
 </html>

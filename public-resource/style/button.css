@@ -75,3 +75,17 @@
     outline: 1px solid #FFEA00;
     cursor: pointer;
 }
+.btn-change {
+    float: left;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 33px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 33px;
+    background: #313131;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
