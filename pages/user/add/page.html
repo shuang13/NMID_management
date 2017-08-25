@@ -79,26 +79,38 @@
                     </div>
                     <p>用户角色</p>
                     <div class="character">
-                        <input type="radio" name="user-type" value="普通用户"/><span class="option-text">普通用户</span>
-                        <input type="radio" name="user-type" value="管理员"/><span class="option-text">管理员</span>
+                        <label for="type-ueser">普通用户</label>
+                        <input id="type-user" type="radio" name="user-type" value="user"/>
+                        <label for="type-admin">管理员</label>
+                        <input id="type-admin" type="radio" name="user-type" value="admin"/>
                     </div>
                     <p>平台</p>
                     <div class="platform">
-                        <input type="radio" name="platform" value="客户端平台"/><span class="option-text">客户端平台</span>
-                        <input type="radio" name="platform" value="服务器平台"/><span class="option-text">服务器平台</span>
-                        <input type="radio" name="platform" value="硬件平台"/><span class="option-text">硬件平台</span>
-                        <input type="radio" name="platform" value="平台培训生"/><span class="option-text">平台培训生</span>
-                        <input type="radio" name="platform" value="孵化平台"/><span class="option-text">孵化平台</span>
-                        <input type="radio" name="platform" value="指导老师"/><span class="option-text">指导老师</span>   
+                        <label for="client">客户端平台</label>
+                        <input id="client" type="radio" name="platform" value="客户端平台"/>
+                        <label for="server">服务器平台</label>
+                        <input id="server" type="radio" name="platform" value="服务器平台"/>
+                        <label for="hard">硬件平台</label>
+                        <input id="hard" type="radio" name="platform" value="硬件平台"/>
+                        <label for="train">平台培训生</label>
+                        <input id="train" type="radio" name="platform" value="平台培训生"/>
+                        <label for="teacher">指导老师</label>
+                        <input id="teacher" type="radio" name="platform" value="指导老师"/> 
                     </div>
                     <p>职务</p>
                     <div class="job">
-                        <input type="checkbox" name="job" value="成员"/><span class="option-text">成员</span>
-                        <input type="checkbox" name="job" value="平台联络人"/><span class="option-text">平台联络人</span>
-                        <input type="checkbox" name="job" value="团队联络人"/><span class="option-text">团队联络人</span>
-                        <input type="checkbox" name="job" value="运营专责"/><span class="option-text">运营专责</span>
-                        <input type="checkbox" name="job" value="产品线"/><span class="option-text">产品线</span>
-                        <input type="checkbox" name="job" value="UI设计组"/><span class="option-text">UI设计组</span>
+                        <label for="member">成员</label>
+                        <input id="member" type="checkbox" name="job" value="成员"/>
+                        <label for="platform-contact">平台联络人</label>
+                        <input id="platform-contact" type="checkbox" name="job" value="平台联络人"/>
+                        <label for="team-contact">团队联络人</label>
+                        <input id="team-contact" type="checkbox" name="job" value="团队联络人"/>
+                        <label for="operate">运营专责</label>
+                        <input id="operate" type="checkbox" name="job" value="运营专责"/>
+                        <label for="product">产品线</label>
+                        <input id="product" type="checkbox" name="job" value="产品线"/>
+                        <label for="UI">UI设计组</label>
+                        <input id="UI" type="checkbox" name="job" value="UI设计组"/>
                     </div>
                     <div class="btn-submit">
                         <a href="#">确认创建</a>
@@ -107,9 +119,11 @@
             </div>
         </div>
     </div>
-    <!-- 设置页面js文件 -->
-    <script src="js/setting-add-user.js"></script>
     <!-- 弹出层配置文件 -->
-    <script type="text/javascript" src="js/jquery.notice.js"></script>
+    <script src="../../../lib/notice/jquery.notice.js"></script>
+    <!-- 公共逻辑 -->
+    <script src="../../../utils/utils.js"></script>
+    <!-- 设置页面js文件 -->
+    <script src="page.js"></script>
 </body>
 </html>

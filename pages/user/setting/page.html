@@ -78,10 +78,9 @@
                         <img src="../../../public-resource/image/user.png" alt="头像预览" class="head-view" />
                         <form action="#" enctype="multipart/form-data">
                             <!-- 头像设置 -->
-                            <div class="head-setting">
+                            <div class="input-box">
                                 <!-- 文件路径预览 -->
-                                <input type="text" id="viewfile" disabled="true"/><button class="file-button">浏览</button>
-                                <input type="file" id="upload-pic" accept=".jpg,.jpeg,.gif,.png"/>  
+                                <input type="file" id="upload-pic" name="upload-pic" />  
                             </div>
                             <!-- 基本信息设置 -->
                             <div class="input-box infor-setting">
@@ -103,10 +102,12 @@
         </div>
     </div>
     <!-- 弹出层配置文件 -->
-    <script type="text/javascript" src="../../../lib/notice/js/jquery.notice.js"></script>
+    <script src="../../../lib/notice/jquery.notice.js"></script>
+    <!-- 文件上传 -->
+    <script src="../../../lib/ajaxfileupload/bootstrap-filestyle.min.js"></script>
+    <script src="../../../lib/ajaxfileupload/ajaxfileupload.js"></script>
     <!-- 公共逻辑 -->
-    <script src="../../../common/js/common.js"></script>
-
+    <script src="../../../utils/utils.js"></script>
     <!-- 设置页面js文件 -->
     <script src="page.js"></script>
 </body>

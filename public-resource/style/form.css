@@ -222,3 +222,11 @@ form {
 .content-text {
     word-break: break-all;
 }
+/*添加用户*/
+.setting-add-user label:first-child {
+    margin-left: 0;
+}
+.setting-add-user label {
+    display: inline-block;
+    margin-left: 70px;
+}

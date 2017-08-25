@@ -2,7 +2,6 @@ var utils = new Utils();
 // 表单提交
 var submit = function () {
     event.preventDefault();
-    $(':file').filestyle({buttonText: "浏览"});
     var $file_icon = $('#app-icon');
     var $member = $('#project-member');
     var $name = $('#project-name');
