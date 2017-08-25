@@ -63,7 +63,7 @@ var utils = new Utils();
             authorId: 1,
             profile: "dd",
             title: $('#blog-title').val(),
-            platform: "2",
+            platform: $('#blog-type').val(),
             names: $('.blog-tag').val(),
             content: content,
             time: Math.round(new Date().getTime()/1000),

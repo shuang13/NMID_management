@@ -133,7 +133,8 @@ form {
     height: 30px;
     border: 1px solid #ccc;
     background: #F9F9F9;
-    color: #A9A9A9;
+    color: #000;
+
 
 }
 /*标签样式*/
@@ -176,4 +177,48 @@ form {
     outline: none;
     border:none;
     border-radius: 15px;
+}
+/*加入我们*/
+.applicant-box {
+    padding-bottom:70px;
+    width: 100%;
+    min-height: 270px;
+    overflow: hidden;
+}
+.applicant-header {
+    padding-right: 55px;
+    
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.applicant-name {
+    width: 100px;
+    height: 32px;
+    float: left;
+    background: #313239;
+    font-size: 14px;
+    color: #fff;
+    line-height: 32px;
+    text-align: center;
+}
+.applicant-platform,.applicant-date {
+    height: 32px;
+    float: left;
+    line-height: 32px;
+}
+.applicant-content {
+    margin-top: 22px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+.content-text {
+    word-break: break-all;
 }

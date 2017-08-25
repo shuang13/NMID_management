@@ -89,3 +89,32 @@
     border-radius: 5px;
     cursor: pointer;
 }
+/*加入我们*/
+/*操作按钮*/
+.join-btn {
+    float: right;
+    margin: 30px 0 0 0;
+}
+.btn-not-pass, .btn-pass {
+    display: inline-block;
+    float: left;
+    margin-left: 18px;
+}
+.btn-not-pass a, .btn-pass a {
+    display: inline-block;
+    width: 130px;
+    height: 33px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 33px;
+}
+.btn-pass a {
+    background: #313131;
+    color: #fff;
+}
+.btn-not-pass a {
+    color: #000;
+}
+.btn-not-pass a:hover, .btn-pass a:hover {
+    outline: 1px solid #FFEA00;
+}
