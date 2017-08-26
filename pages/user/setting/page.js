@@ -1,8 +1,41 @@
 var utils = new Utils();
-
+ // 文件上传
+var fileUpload = function (URL, fileId, uid) {
+    var ajaxArgs = {
+        uid: 2,
+        headImg: ''
+    }
+    $.ajaxFileUpload({
+        url: URL,
+        secureuri: false,
+        fileElementId: fileId,
+        data: ajaxArgs,
+        beforeSend: $.notice('提示！', '正在提交...', function () {
+            utils.loading($('.jq-notice-context'));
+        }),
+        dataType: 'json',
+        success: function (data) {
+            if(typeof data == 'string') {
+                data = JSON.parse(data);
+            }
+            var aaData = data.body;
+            var status = data.code;
+            if(status == 200) {
+                $('.head-view').src = utils.URLHead + aaData;
+            } else {
+                $('.jq-notice-context').html('链接服务器失败!');
+            }
+        }
+    }); 
+}
 $(document).ready(function () {
     $(':file').filestyle({buttonText: "浏览"});
-    var my_id = 2;
+    window.my_id = 2;
+    $('#upload-pic').on('change', function (event) {
+        utils.fileUpload(utils.URLHead + '/users/uploadHeadImg', 'upload-pic', my_id)
+    });
+
+    
     // 获取用户信息
     $.ajax({
             type: "GET",

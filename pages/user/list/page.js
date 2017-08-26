@@ -61,7 +61,7 @@ var pagination = function (totalPage) {
     });
 }
 // 删除
-var onDelete = function () {
+var onDelete = function (event) {
     event.preventDefault();
         var $this = $(this);
         var id = $this.closest('tr').attr('data-id')
@@ -81,24 +81,32 @@ var onDelete = function () {
                         uid: id,
                     }
                     log(ajaxArgs)
-                    $.ajax({
-                        type: "POST",
+                    axios({
+                        method:"DELETE",
                         url: utils.URLHead + '/users/' + id,
-                        beforeSend: $.notice('提示！', '正在提交...', function () {
-                            utils.loading($('.jq-notice-context'));
-                        }),
-                        data: ajaxArgs,
                         success: function (data) {
                             if(typeof data == 'string') {
                                 data = JSON.parse(data);
                             }
                             var status = data.code;
                             if (status == 200) {
-                                $('.jq-notice-context').html('删除成功!');
-                                setTimeout("location.reload()",1000); 
+                                
                             }
                         }
-                    });    
+                    });
+                    // $.ajax({
+                    //     type: "DELETE",
+                    //     url: utils.URLHead + '/users/' + id,
+                    //     success: function (data) {
+                    //         if(typeof data == 'string') {
+                    //             data = JSON.parse(data);
+                    //         }
+                    //         var status = data.code;
+                    //         if (status == 200) {
+                                
+                    //         }
+                    //     }
+                    // });    
                     
                 });
                 $context.find('.false').on('click', function () {

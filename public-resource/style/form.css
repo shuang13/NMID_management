@@ -138,16 +138,16 @@ form {
 
 }
 /*标签样式*/
-.blog-tag-box {
+.tag-box {
     display: inline-block;
 }
-.blog-tag-box li {
+.tag-box li {
     position: relative;
     float: left;
     margin-right: 18px;
     margin-bottom: 10px;
 }
-.blog-tag-box li .delete-tag {
+.tag-box li .delete-tag {
     position: absolute;
     top: -8px;
     right: -2px;
@@ -168,7 +168,7 @@ form {
     border-radius: 5px;
     cursor: pointer;
 }
-.blog-tag {
+.write-tag {
     display: inline-block;
     padding: 0 10px;
     width: 90px;

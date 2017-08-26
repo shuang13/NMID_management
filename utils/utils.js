@@ -4,24 +4,7 @@ var Utils = function () {
         URLHead: 'http:119.29.234.36:8080/nmid',
 
     }
-    // 文件上传
-    utils.fileUpload = function (URL, fileId) {
-        $.ajaxFileUpload({
-            url: URL,
-            secureuri: false,
-            fileElementId: fileId,
-            data: ajaxArgs,
-            beforeSend: $.notice('提示！', '正在提交...', function () {
-                utils.loading($('.jq-notice-context'));
-            }),
-            dataType: 'json',
-            success: function (data) {
-                log(data)
-                $('.jq-notice-context').html('上传成功!');
-                setTimeout('$.closeNotice()',2000); 
-            }
-        }); 
-    }
+
     // 验证
     utils.validateEmpty = function (data) {
         for(key in data) {
@@ -101,6 +84,18 @@ var Utils = function () {
     utils.getdate = function (sourceDate) {
         var now = new Date(sourceDate * 1000), y = now.getFullYear(), m = now.getMonth() + 1, d = now.getDate();
         return y + "/" + (m < 10 ? "0" + m : m) + "/" + (d < 10 ? "0" + d : d) + " " + now.toTimeString().substr(0, 8);
+    }
+    // 解析url中的id
+    utils.getUrlId = function () {
+        var id = window.location.href.split('?')[1].split('=')[1];
+        if (id == null) {
+            $.notice('提示！', '请在选择编辑对象！');
+            setTimeout(function () {
+                window.location.href = '../list/page.html';
+            }, 1000);
+            return false;
+        }
+        return id;
     }
     return utils;
 }
