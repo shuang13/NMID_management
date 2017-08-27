@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>项目更新</title>
+    <title>项目上传</title>
     
    <!-- 基础样式 -->
     <link rel="stylesheet" href="../../../public-resource/style/base.css">
@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="../../../lib/notice/css/jquery.notice.css">
     <!-- jq -->
     <script src="../../../lib/jq/jquery.min.js"></script>
-    <script src="http://malsup.github.io/jquery.form.js"></script>
 
 </head>
 <body>
@@ -67,38 +66,18 @@
             <div id="inner-content">
                 <ul class="nav">
                    <li><a href="../list/page.html">项目列表</a></li> 
-                   <li><a href="../upload/page.html">项目上传</a></li> 
+                   <li class="nav-active"><a href="../upload/page.html">项目上传</a></li> 
                    <li class="admin-view"><a href="../examine/page.html">项目审核</a></li> 
-                   <li class="nav-active"><a href="../edit/page.html">项目更新</a></li> 
                 </ul>
                 <div class="main">
-                    <div class="form-file-box">
-                        <form id="upload-form-icon" enctype="multipart/form-data" action="http:119.29.234.36:8080/nmid/works/uploadImgAndFile" method="post">
-                            <div class="input-box">
-                                <div class="box-title">应用图标</div>
-                                <input type="file" id="app-icon" name="logo"/>
-                                <input type="hidden" class="project-id" name='id'>
-                            </div>
-                        </form>
-                        <form id="upload-form-screenshot" enctype="multipart/form-data" action="http:119.29.234.36:8080/nmid/works/uploadImgAndFile" method="post">
-                            <div class="input-box">
-                                <div class="box-title">产品截图</div>
-                                <input type="file" id="app-screenshot" name="illustration"/>
-                                <input type="hidden" class="project-id" name='id'>
-                            </div>
-                        </form>
-                        <form id="upload-form-app" enctype="multipart/form-data" action="http:119.29.234.36:8080/nmid/works/uploadImgAndFile" method="post">
-                            <div class="input-box">
-                                <div class="box-title">应用上传</div>
-                                <input type="file" id="app-upload" name="links"/>
-                                <input type="hidden" class="project-id" name='id'>
-                            </div>
-                        </form>
-                    </div>
-                    <form action="##" style="overflow: hidden;padding-top: 15px;">
+                    <form action="##">
                         <div class="input-box">
                             <div class="box-title">产品基本信息</div>
-                            <input id="project-member" type="text" placeholder="项目组成员" />
+                            
+                            <div class="file-upload-box">
+                                <label for="app-icon">应用图标</label>
+                                <input type="file" id="app-icon" name="app-icon"/>
+                            </div>
                             <input id="project-name" type="text" placeholder="项目组名称" />
                             <input id="app-size" type="text" placeholder="大小" />
                             <input id="app-version" type="text" placeholder="版本" />
@@ -120,7 +99,14 @@
                             <div class="box-title">用法说明</div>
                             <textarea name="" id="app-instruction" placeholder="用法说明"></textarea>
                         </div>
-                        
+                        <div class="input-box">
+                            <div class="box-title">产品截图</div>
+                            <input id="app-screenshot" type="file" name="app-screenshot" />
+                        </div>
+                        <div class="input-box">
+                            <div class="box-title">应用上传</div>
+                            <input id="app-upload" type="file" name="app-upload" /> 
+                        </div>
                         <div class="input-box">
                             <div class="box-title">产品链接</div>
                             <input id="app-link" type="text" placeholder="产品链接" />
@@ -130,8 +116,6 @@
                         </div>
                    
                     </form>
-                    
-                    
                 </div>
             </div>
         </div>

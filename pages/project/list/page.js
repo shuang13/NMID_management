@@ -21,7 +21,7 @@ var parseData = function (data) {
                         data[i].id + '">查看</a>' +" | " +
                         '<a href="../edit/page.html?id=' + 
                         data[i].id + '">更新</a>' + 
-                        '<button class="add-member" >添加项目组成员</button>'
+                        '<button class="add-member" >添加项目组成员</button>' 
 
         }); 
     }
@@ -67,7 +67,7 @@ var pagination = function (totalPage) {
         }
     });
 }
-var drawList = function (data) {
+var drawList = function (data, text) {
         var $frag = $(document.createDocumentFragment());
         var table = 
                     '<table cellspacing="0" class="add-member-table">' +
@@ -84,7 +84,7 @@ var drawList = function (data) {
                         '</div>' +
                     '</table>';
 
-        $.notice('添加成员：', table, function () {
+        $.notice(text + '：', table, function () {
             // body...
         });           
         $('.jq-notice-container .jq-notice-content').css('top', '10%');
@@ -131,7 +131,7 @@ function addMember(event) {
             // 数据解析
             var new_data = parseList(aaData);
             // 根据解析的结果，绘制表格
-            drawList(new_data);
+            drawList(new_data, '添加成员');
 
             $('.member-submit').on('click', function () {
                 $.closeNotice();
@@ -139,25 +139,33 @@ function addMember(event) {
                 var authors = [];
                 for (var i = 0; i < text.length; i++) {
                     authors.push({
-                        id: text[i].value
-                    });
+                        name: "authors",
+                        value: text[i].value
+                    }
+                    );
                 }
-                log(authors)
-
+               
                 var memberArgs = {
-                    id: p_id,
-                    authors: 71,
+                    authors: authors
                 }
-                log(memberArgs)
+
                 $.ajax({
                     type: "POST",
                     url: utils.URLHead + "/works/" + p_id + "/authors",
-                    data: memberArgs,
+                    data: authors,
+                    beforeSend: $.notice('提示！', '正在提交...', function () {
+                            utils.loading($('.jq-notice-context'));
+                        }),
                     success: function (data) {
                         // 获取原始数据
                         var aaData = data.body.list;
                         log(data)
+                        var status = data.code;
                         // 数据解析
+                        if (status == 201) {
+                            $('.jq-notice-context').html('提交成功!');
+                            setTimeout("location.reload()",1000); 
+                        }
                         
                     }
                 });
@@ -165,8 +173,11 @@ function addMember(event) {
         }
     });
 }
+
 $(document).ready(function () {
     utils.loginTesting();
+    
+
     $.ajax({
         type: "GET",
         beforeSend: utils.loading($('tbody')),
@@ -186,8 +197,17 @@ $(document).ready(function () {
                                 
                 // 根据解析的结果，绘制表格
                 utils.drawTable(new_data);
+                
                 pagination(pageNum);
                 $('.add-member').on('click', addMember);
+                for (var i = 0; i < $('tr').length; i++) {
+                    if ($('tr').eq(i + 1).find('td').eq(2).html() !== '') {
+                        log(i)
+                        $('tr').eq(i + 1).find('.add-member').remove();
+
+                    }
+
+                }
             }
         }
     });

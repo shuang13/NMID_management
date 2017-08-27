@@ -6,22 +6,10 @@
     <link rel="stylesheet" href="test1.css">
 </head>
 <body>
-<!-- 加载编辑器的容器 -->
-                    <div class="editor-box">
-                        <textarea id="editor_id" name="content">
-                        </textarea>
-                    </div>
-    <script src="test2.js"></script>
-    <script src="test1.js"></script>
-
-    <!-- 富文本编辑器 -->
-    <script charset="utf-8" src="../lib/kindeditor/kindeditor-all-min.js"></script>
-    <script charset="utf-8" src="../lib/kindeditor/lang/zh_CN.js"></script>
-    <script>
-        // 富文本编辑器
-    KindEditor.ready(function(K) {
-        window.editor = K.create('#editor_id');
-    });
-    </script>
+    <form enctype="multipart/form-data" action="http:119.29.234.36:8080/nmid/users/uploadHeadImg" method="post">
+        <input type="file" name="headImg">
+        <input type="text" name='uid'>
+        <input type="submit">
+    </form>
 </body>
 </html>

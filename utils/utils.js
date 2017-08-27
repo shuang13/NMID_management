@@ -113,6 +113,26 @@ var Utils = function () {
         } else {
             utils.my_id = sessionStorage.getItem('my_id');
             utils.my_role = sessionStorage.getItem('my_role');
+            $.ajax({
+                type: "GET",
+                url: utils.URLHead + "/users/" + utils.my_id,
+                success: function (data) {
+                    if(typeof data == 'string') {
+                        data = JSON.parse(data);
+                    }
+                    var aaData = data.body;
+                    var status = data.code;
+                    if(status == 200) {
+                        $('.user-image i').css('background','url(' + utils.URLHead + aaData.portrait + ') center no-repeat');
+                        $('.user-image i').css('background-size','130px 130px');
+                        $('.user-image .name').html(aaData.name);
+
+
+                    } else {
+                        $('.jq-notice-context').html('链接服务器失败!');
+                    }
+                }
+            });
         }
         // 用户权限判断
         if (utils.my_role != 'admin') {
@@ -128,6 +148,7 @@ var Utils = function () {
             utils.jumpUrl('../../login/index/login.html', 2000);
             return false;
         }
+        else return true
     }
     
     return utils;

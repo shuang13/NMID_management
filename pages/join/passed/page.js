@@ -2,7 +2,6 @@ var utils = new Utils();
 // 分页
 var pagination = function (totalPage) {
     $("#pagination").pagination({
-        currentPage: 1,
         totalPage: totalPage,
         callback: function(current) {
             var ajaxArgs = {
@@ -11,6 +10,7 @@ var pagination = function (totalPage) {
             $.ajax({
                 type: "POST",
                 url:  utils.URLHead + "/signUpList",
+                data: ajaxArgs,
                 success: function (data) {
                     if(typeof data == 'string') {
                         data = JSON.parse(data);
@@ -20,13 +20,9 @@ var pagination = function (totalPage) {
                         // 获取原始数据
                         var aaData = data.body.list;
                         var pageNum = Math.ceil(data.body.num / data.body.list.length);
-                        window.current = 1;
+                        window.current = current;
                         // 数据解析
                         drawBox(aaData);
-                        pagination(pageNum);
-                        // 审核
-                        $('.btn-pass').on('click', examine);
-                
                     }
                 }
             });
@@ -49,7 +45,7 @@ var drawBox = function (data) {
         '</div>'+
     '</div>')
     }
-    box.append($frag);
+    box.empty().append($frag);
 }
 $(document).ready(function() {
     utils.loginTesting();

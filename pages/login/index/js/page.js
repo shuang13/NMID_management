@@ -18,8 +18,8 @@ $(document).ready(function () {
         }
         var userStorage = {};
         var admin = {
-            id: 71,
-            role: "user"
+            id: 2,
+            role: "admin"
         };
         // 设置登录状态
         utils.setLoginState(admin);

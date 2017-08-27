@@ -1,38 +1,11 @@
 var utils = new Utils();
- // 文件上传
-var fileUpload = function (URL, fileId, uid) {
-    var ajaxArgs = {
-        uid: utils.my_id,
-        headImg: ''
-    }
-    $.ajaxFileUpload({
-        url: URL,
-        secureuri: false,
-        fileElementId: fileId,
-        data: ajaxArgs,
-        beforeSend: $.notice('提示！', '正在提交...', function () {
-            utils.loading($('.jq-notice-context'));
-        }),
-        dataType: 'json',
-        success: function (data) {
-            if(typeof data == 'string') {
-                data = JSON.parse(data);
-            }
-            var aaData = data.body;
-            var status = data.code;
-            if(status == 200) {
-                $('.head-view').src = utils.URLHead + aaData;
-            } else {
-                $('.jq-notice-context').html('链接服务器失败!');
-            }
-        }
-    }); 
-}
+
 $(document).ready(function () {
     utils.loginTesting();
     $(':file').filestyle({buttonText: "浏览"});
     $('#upload-pic').on('change', function (event) {
-        utils.fileUpload(utils.URLHead + '/users/uploadHeadImg', 'upload-pic', my_id)
+        $('#upload-uid').val(utils.my_id)
+        $('#upload-form').submit();
     });
     // 获取用户信息
     $.ajax({
@@ -50,6 +23,8 @@ $(document).ready(function () {
                     $('#user-email').val(aaData.email);
                     $('#user-weibo').val(aaData.weibo);
                     $('#introduction').val(aaData.profile);
+                    $('.head-view').attr('src', utils.URLHead + aaData.portrait);
+
                 } else {
                     $('.jq-notice-context').html('链接服务器失败!');
                 }

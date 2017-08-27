@@ -123,6 +123,7 @@ var examine = function(event) {
 $(document).ready(function () {
     utils.loginTesting();
     if(utils.adminRightTesting()) {
+        log(0)
         $.ajax({
             type: "GET",
             beforeSend: utils.loading($('tbody')),

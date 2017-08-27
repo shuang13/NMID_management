@@ -75,27 +75,26 @@
                     <!-- 修改个人资料 -->
                     <div class="information-setting">
                         <p>修改个人资料</p>
-                        <img src="../../../public-resource/image/user.png" alt="头像预览" class="head-view" />
-                        <form action="#" enctype="multipart/form-data">
-                            <!-- 头像设置 -->
+                        <img alt="头像预览" class="head-view" />
+                        <form id="upload-form" enctype="multipart/form-data" action="http:119.29.234.36:8080/nmid/users/uploadHeadImg" method="post">
                             <div class="input-box">
-                                <!-- 文件路径预览 -->
-                                <input type="file" id="upload-pic" name="upload-pic" />  
-                            </div>
-                            <!-- 基本信息设置 -->
-                            <div class="input-box infor-setting">
-                                <input type="text" placeholder="姓名" id="user-name"/>
-                                <input type="text" placeholder="电话" id="user-telephone"/>
-                                <input type="text" placeholder="邮箱" id="user-email"/>
-                                <input type="text" placeholder="微博" id="user-weibo"/>
-                            </div>
-                            <div class="input-box">
-                                <textarea id="introduction" cols="30" rows="10" placeholder="个人简介"></textarea>
-                            </div>
-                            <div class="btn-submit" >
-                                <a href="#" >发布</a>
+                                <input type="file" id="upload-pic" name="headImg">
+                                <input type="hidden" id="upload-uid" name='uid'>
                             </div>
                         </form>
+                        <!-- 基本信息设置 -->
+                        <div class="input-box infor-setting">
+                            <input type="text" placeholder="姓名" id="user-name"/>
+                            <input type="text" placeholder="电话" id="user-telephone"/>
+                            <input type="text" placeholder="邮箱" id="user-email"/>
+                            <input type="text" placeholder="微博" id="user-weibo"/>
+                        </div>
+                        <div class="input-box">
+                            <textarea id="introduction" cols="30" rows="10" placeholder="个人简介"></textarea>
+                        </div>
+                        <div class="btn-submit" >
+                            <a href="#" >发布</a>
+                        </div>
                     </div>
                 </div>
             </div>

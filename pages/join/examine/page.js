@@ -5,6 +5,7 @@ var pagination = function (totalPage) {
         currentPage: 1,
         totalPage: totalPage,
         callback: function(current) {
+
             var ajaxArgs = {
                 page: current,
             };
@@ -15,15 +16,17 @@ var pagination = function (totalPage) {
                     if(typeof data == 'string') {
                         data = JSON.parse(data);
                     }
+                        log(data)
+
                     var status = data.code;
                     if (status == 200) {
                         // 获取原始数据
                         var aaData = data.body.list;
                         var pageNum = Math.ceil(data.body.num / data.body.list.length);
-                        window.current = 1;
+                        window.current = current;
+
                         // 数据解析
                         drawBox(aaData);
-                        pagination(pageNum);
                         // 审核
                         $('.btn-pass').on('click', examine);
                 
@@ -48,9 +51,6 @@ var examine = function(event) {
             var $context = $('.jq-notice-context');
             // 参数
             var id = $this.attr('data-id');
-            
-
-            log(ajaxArgs)
             $context.find('.true').on('click', function (event) {
                 event.preventDefault();
                 var ajaxArgs = {
@@ -80,11 +80,11 @@ var examine = function(event) {
                 event.preventDefault();
                 var ajaxArgs = {
                     signupId: id,
-                    _method: 'DELETE',
                 }
                 $.ajax({
                     type: "POST",
-                    url: utils.URLHead + '/news/' + ajaxArgs.signupId,
+                    url: utils.URLHead + '/outSignUp',
+                    data: ajaxArgs,
                     beforeSend: $.notice('提示！', '正在提交...', function () {
                         utils.loading($('.jq-notice-context'));
                     }),
@@ -124,7 +124,7 @@ var drawBox = function (data) {
        '</div>'+
     '</div>')
     }
-    box.append($frag);
+    box.empty().append($frag);
 }
 $(document).ready(function() {
     utils.loginTesting();

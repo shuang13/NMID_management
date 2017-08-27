@@ -109,15 +109,44 @@ $(document).ready(function () {
             else $.notice("提示！", "服务器连接失败!");
         }
     });
+    // 文件上传
+    $('#app-icon').on('change', function (event) {
+        $('.project-id').val(id)
+        $('#upload-form-icon').ajaxSubmit(function(message) {
+            var status = message.code;
+                log(message)
+            
+            if (status == 200) {
+                $.notice('提示！', '文件上传成功');
+                
+            }
+            else $.notice("提示！", "服务器连接失败!");
+        }); 
+        
 
+    });
+    $('#app-screenshot').on('change', function (event) {
+        $('.project-id').val(id)
+        $('#upload-form-screenshot').ajaxSubmit(function(message) {
+            var status = message.code;
+
+            if (status == 200) {
+                $.notice('提示！', '文件上传成功');
+                
+            }
+            else $.notice("提示！", "服务器连接失败!");
+        }); 
+    });
+    $('#app-upload').on('change', function (event) {
+        $('.project-id').val(id)
+        $('#upload-form-app').ajaxSubmit(function(message) {
+            var status = message.code;
+            if (status == 200) {
+                $.notice('提示！', '文件上传成功');
+                
+            }
+            else $.notice("提示！", "服务器连接失败!");
+        }); 
+    });
     $('.btn-submit').on('click', submit);
-    $('#app-icon').on('change', function (event) {
-        utils.fileUpload(utils.URLHead + '/works/uploadImgAndFile', 'app-icon')
-    });
-    $('#app-icon').on('change', function (event) {
-        utils.fileUpload(utils.URLHead + '/works/uploadImgAndFile', 'app-icon')
-    });
-    $('#app-icon').on('change', function (event) {
-        utils.fileUpload(utils.URLHead + '/works/uploadImgAndFile', 'app-icon')
-    });
 });

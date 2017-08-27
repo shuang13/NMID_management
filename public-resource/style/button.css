@@ -133,3 +133,6 @@
     opacity: 0.9;
 
 }
+.add-member {
+    cursor: pointer;
+}
