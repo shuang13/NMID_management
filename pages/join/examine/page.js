@@ -128,28 +128,29 @@ var drawBox = function (data) {
 }
 $(document).ready(function() {
     utils.loginTesting();
-    $.ajax({
-        type: "POST",
-        url:  utils.URLHead + "/signUpList",
-        success: function (data) {
-            if(typeof data == 'string') {
-                data = JSON.parse(data);
+    if(!utils.adminRightTesting()) {
+        $.ajax({
+            type: "POST",
+            url:  utils.URLHead + "/signUpList",
+            success: function (data) {
+                if(typeof data == 'string') {
+                    data = JSON.parse(data);
+                }
+                var status = data.code;
+                if (status == 200) {
+                    // 获取原始数据
+                    var aaData = data.body.list;
+                    var pageNum = Math.ceil(data.body.num / data.body.list.length);
+                    window.current = 1;
+                    // 数据解析
+                    drawBox(aaData);
+                    pagination(pageNum);
+                    // 审核
+                    $('.btn-pass').on('click', examine);
+            
+                }
             }
-            var status = data.code;
-            if (status == 200) {
-                // 获取原始数据
-                var aaData = data.body.list;
-                var pageNum = Math.ceil(data.body.num / data.body.list.length);
-                window.current = 1;
-                // 数据解析
-                drawBox(aaData);
-                pagination(pageNum);
-                // 审核
-                $('.btn-pass').on('click', examine);
-        
-            }
-        }
-    });
-    
+        });
+    }
     
 })

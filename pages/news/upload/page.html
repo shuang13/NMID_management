@@ -66,7 +66,7 @@
                 <ul class="nav">
                    <li><a href="../list/page.html">新闻列表</a></li> 
                    <li class="nav-active"><a href="../upload/page.html">新闻上传</a></li> 
-                   <li><a href="../examine/page.html">新闻审核</a></li> 
+                   <li class="admin-view"><a href="../examine/page.html">新闻审核</a></li> 
                 </ul>
                 <div class="main">
                     <div class="infor-setting">
@@ -97,7 +97,12 @@
     <!-- 富文本编辑器 -->
     <script charset="utf-8" src="../../../lib/kindeditor/kindeditor-all-min.js"></script>
     <script charset="utf-8" src="../../../lib/kindeditor/lang/zh_CN.js"></script>
-    
+    <script>
+        // 富文本编辑器
+    KindEditor.ready(function(K) {
+        window.editor = K.create('#editor_id');
+    });
+    </script>
     <!-- 文件上传 -->
     <script src="../../../lib/ajaxfileupload/bootstrap-filestyle.min.js"></script>
     <script src="../../../lib/ajaxfileupload/ajaxfileupload.js"></script>

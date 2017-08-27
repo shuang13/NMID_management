@@ -99,7 +99,8 @@ $(document).ready(function() {
 
                 $('#blog-title').val(aaData.title);
                 simplemde.value(aaData.content);
-                $('#blog-type option').eq(aaData.platform - 1).attr("selected", "selected");
+                $('#blog-type option').eq(aaData.platform).attr("selected", "selected");
+
             }
             else $.notice("提示！", "服务器连接失败!");
         }

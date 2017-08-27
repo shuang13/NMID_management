@@ -128,29 +128,31 @@ var examine = function(event) {
     }
 $(document).ready(function () {
     utils.loginTesting();
-    $.ajax({
-        type: "GET",
-        beforeSend: utils.loading($('tbody')),
-        url: utils.URLHead + "/works/unpass",
-        success: function(data){
-            if(typeof data == 'string') {
-                data = JSON.parse(data);
+    if(!utils.adminRightTesting()) {
+        $.ajax({
+            type: "GET",
+            beforeSend: utils.loading($('tbody')),
+            url: utils.URLHead + "/works/unpass",
+            success: function(data){
+                if(typeof data == 'string') {
+                    data = JSON.parse(data);
+                }
+                var status = data.code;
+                if (status == 200) {
+                    // 获取原始数据
+                    var aaData = data.body.list;
+                    var pageNum = Math.ceil(data.body.num / data.body.list.length);
+    
+                    // 数据解析
+                    var new_data = parseData(aaData);
+                                    
+                    // 根据解析的结果，绘制表格
+                    utils.drawTable(new_data);
+                    pagination(pageNum);
+                    // 项目审核
+                    $('.btn-examine').on('click', examine);
+                }
             }
-            var status = data.code;
-            if (status == 200) {
-                // 获取原始数据
-                var aaData = data.body.list;
-                var pageNum = Math.ceil(data.body.num / data.body.list.length);
-
-                // 数据解析
-                var new_data = parseData(aaData);
-                                
-                // 根据解析的结果，绘制表格
-                utils.drawTable(new_data);
-                pagination(pageNum);
-                // 项目审核
-                $('.btn-examine').on('click', examine);
-            }
-        }
-    });
+        });
+    }
 })

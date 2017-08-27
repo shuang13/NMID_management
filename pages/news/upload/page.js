@@ -6,8 +6,6 @@ var init = function () {
     KindEditor.ready(function(K) {
         window.editor = K.create('#editor_id');
     });
-    // 地址id   
-    window.id = utils.getUrlId();
 }
  $(document).ready(function() {
     init();

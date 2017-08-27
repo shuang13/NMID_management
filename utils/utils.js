@@ -44,15 +44,17 @@ var Utils = function () {
     }
     // 解析url中的id
     utils.getUrlId = function () {
-        var id = window.location.href.split('?')[1].split('=')[1];
-        if (id == null) {
-            $.notice('提示！', '请在选择编辑对象！');
+        try {
+            var id = window.location.href.split('?')[1].split('=')[1];
+            return id;
+        }
+        catch(err) {
+            $.notice('提示！', '请选择编辑对象！');
             setTimeout(function () {
                 window.location.href = '../list/page.html';
             }, 1000);
             return false;
         }
-        return id;
     }
     // 获取登录状态
     utils.getLoginState = function () {
@@ -104,12 +106,27 @@ var Utils = function () {
         }, time)
     }
     utils.loginTesting = function () {
+        // 登录状态判断
         if (!utils.getLoginState) {
             $.notice('提示！', '请进行用户登录，正在跳转登录页面...');
             utils.jumpUrl('../../login/index/login.html', 2000);
         } else {
-            utils.my_id = sessionStorage.getItem('my_id')
-            utils.my_role = sessionStorage.getItem('my_role')
+            utils.my_id = sessionStorage.getItem('my_id');
+            utils.my_role = sessionStorage.getItem('my_role');
+        }
+        // 用户权限判断
+        if (utils.my_role != 'admin') {
+            $('.admin-view').remove();
+        }
+        // 暂时隐藏消息功能
+        $('.top-nav').remove();
+    }
+    utils.adminRightTesting = function () {
+        // 登录权限判断
+        if (utils.my_role != 'admin') {
+            $.notice('提示！', '对不起，您无浏览该页面权限，正在跳转登录页面...');
+            utils.jumpUrl('../../login/index/login.html', 2000);
+            return false;
         }
     }
     
