@@ -24,3 +24,15 @@
     display: block;
     color: #06A2E9;
 }
+.add-member-table {
+    margin: 0 auto;
+}
+.add-member-table tr {
+    font-size: 16px;
+    line-height: 20px;
+    border: none;
+}
+.add-member-table td {
+    padding: 10px 15px;
+    border: none;
+}

@@ -128,7 +128,7 @@ var drawBox = function (data) {
 }
 $(document).ready(function() {
     utils.loginTesting();
-    if(!utils.adminRightTesting()) {
+    if(utils.adminRightTesting()) {
         $.ajax({
             type: "POST",
             url:  utils.URLHead + "/signUpList",

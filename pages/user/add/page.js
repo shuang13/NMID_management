@@ -34,7 +34,7 @@ var submit = function(event) {
 }
 $(document).ready(function() {
     utils.loginTesting();
-    if(!utils.adminRightTesting()) {
+    if(utils.adminRightTesting()) {
         // 按钮事件
         $('.setting-add-user .btn-submit a').on('click', submit);
     }

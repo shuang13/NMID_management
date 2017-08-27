@@ -106,7 +106,8 @@ var onDelete = function (event) {
 }
 $(document).ready(function () {
     utils.loginTesting();
-    if(!utils.adminRightTesting()) {
+    if(utils.adminRightTesting()) {
+        log(4)
         $.ajax({
             type: "GET",
             beforeSend: utils.loading($('tbody')),

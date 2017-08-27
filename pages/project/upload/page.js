@@ -58,6 +58,7 @@ var submit = function () {
         }
     });
 }
+
 $(document).ready(function () {
     utils.loginTesting();
     $(':file').filestyle({buttonText: "浏览"});

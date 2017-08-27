@@ -72,7 +72,7 @@
 .setting-add-user .input-box input[type=text] {
     display: block;
 }
-.setting-add-user input[type=radio],input[type=checkbox] {
+.setting-add-user input[type=radio] {
     margin: 18px 10px 30px 0;
 }
 .option-text {

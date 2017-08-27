@@ -20,7 +20,9 @@ var parseData = function (data) {
             "operation": '<a href="../visit/page.html?id=' + 
                         data[i].id + '">查看</a>' +" | " +
                         '<a href="../edit/page.html?id=' + 
-                        data[i].id + '">更新</a>' 
+                        data[i].id + '">更新</a>' + 
+                        '<button class="add-member" >添加项目组成员</button>'
+
         }); 
     }
     return formdata;
@@ -58,9 +60,108 @@ var pagination = function (totalPage) {
                                         
                         // 根据解析的结果，绘制表格
                         utils.drawTable(new_data);
+                        $('.add-member').on('click', addMember);
                     }
                 }
             });
+        }
+    });
+}
+var drawList = function (data) {
+        var $frag = $(document.createDocumentFragment());
+        var table = 
+                    '<table cellspacing="0" class="add-member-table">' +
+                        '<thead >' +
+                            '<tr>' +
+                                '<th data-name="order-number"></th>' +
+                                '<th data-name="name"></th>' +
+                                '<th data-name="operation"></th>' +
+                            '</tr>' +
+                        '</thead>' +
+                        '<tbody></tbody>' +
+                        '<div class="member-submit">' +
+                            '确认' +
+                        '</div>' +
+                    '</table>';
+
+        $.notice('添加成员：', table, function () {
+            // body...
+        });           
+        $('.jq-notice-container .jq-notice-content').css('top', '10%');
+
+        var $context = $('.jq-notice-context');
+        var $ths = $context.find('th');
+    
+        for(var i = 0; i < data.length; i++) {
+            var $tr = $('<tr data-id="' + data[i].id + '"></tr>');
+            for(var j = 0; j < $ths.length; j++) {
+                $tr.append('<td>' + data[i][$ths.eq(j).attr('data-name')] + '</td');
+            }
+            $frag.append($tr);
+        }
+        $context.find('tbody').empty().append($frag);
+    }
+// 解析表格数据
+var parseList = function (data) {
+    var formdata = [];
+    for(var i = 0; i < data.length; i++) {
+        formdata.push({
+            "id": data[i].id,
+            "order-number": i + 1,
+            "name": data[i].name,
+            "operation": '<input type="checkbox" name="member" value="' + data[i].id + '">' 
+        }); 
+    }
+    return formdata;
+
+}
+function addMember(event) {
+    var p_id = $(this).closest('tr').attr('data-id');
+    log(p_id)
+    var ajaxArgs = {
+        page_size: 100
+    }
+    $.ajax({
+        type: "GET",
+        url: utils.URLHead + "/users",
+        data: ajaxArgs,
+        success: function (data) {
+            // 获取原始数据
+            var aaData = data.body.list;
+            // 数据解析
+            var new_data = parseList(aaData);
+            // 根据解析的结果，绘制表格
+            drawList(new_data);
+
+            $('.member-submit').on('click', function () {
+                $.closeNotice();
+                var text = $("input:checkbox[name='member']:checked");
+                var authors = [];
+                for (var i = 0; i < text.length; i++) {
+                    authors.push({
+                        id: text[i].value
+                    });
+                }
+                log(authors)
+
+                var memberArgs = {
+                    id: p_id,
+                    authors: 71,
+                }
+                log(memberArgs)
+                $.ajax({
+                    type: "POST",
+                    url: utils.URLHead + "/works/" + p_id + "/authors",
+                    data: memberArgs,
+                    success: function (data) {
+                        // 获取原始数据
+                        var aaData = data.body.list;
+                        log(data)
+                        // 数据解析
+                        
+                    }
+                });
+            })
         }
     });
 }
@@ -86,6 +187,7 @@ $(document).ready(function () {
                 // 根据解析的结果，绘制表格
                 utils.drawTable(new_data);
                 pagination(pageNum);
+                $('.add-member').on('click', addMember);
             }
         }
     });

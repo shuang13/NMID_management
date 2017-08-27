@@ -118,3 +118,18 @@
 .btn-not-pass a:hover, .btn-pass a:hover {
     outline: 1px solid #FFEA00;
 }
+.member-submit {
+    position: absolute;
+    margin-left: -20px;
+    height: 50px;
+    width: 300px;
+    background: #408ac9;
+    border-radius: 50% / 100% 100% 0 0;
+    bottom: 0;
+    text-align: center;
+    font-size: 25px;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.9;
+
+}
