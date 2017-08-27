@@ -47,16 +47,21 @@ var examine = function(event) {
         function () {
             var $context = $('.jq-notice-context');
             // 参数
-            var ajaxArgs = {
-                signupId: $this.attr('data-id')
-            }
+            var id = $this.attr('data-id');
+            
+
             log(ajaxArgs)
             $context.find('.true').on('click', function (event) {
                 event.preventDefault();
+                var ajaxArgs = {
+                    signupId: id,
+                }
                 $.ajax({
                     type: "POST",
                     url: utils.URLHead + '/passSignUp',
-                    beforeSend: utils.loading($('.jq-notice-context')),
+                    beforeSend: $.notice('提示！', '正在提交...', function () {
+                        utils.loading($('.jq-notice-context'));
+                    }),
                     data: ajaxArgs,
                     success: function (data) {
                         if(typeof data == 'string') {
@@ -73,10 +78,16 @@ var examine = function(event) {
             });
             $context.find('.false').on('click', function () {
                 event.preventDefault();
+                var ajaxArgs = {
+                    signupId: id,
+                    _method: 'DELETE',
+                }
                 $.ajax({
                     type: "POST",
-                    url: utils.URLHead + '/news/' + ajaxArgs.ids,
-                    beforeSend: utils.loading($('.jq-notice-context')),
+                    url: utils.URLHead + '/news/' + ajaxArgs.signupId,
+                    beforeSend: $.notice('提示！', '正在提交...', function () {
+                        utils.loading($('.jq-notice-context'));
+                    }),
                     success: function (data) {
                         if(typeof data == 'string') {
                             data = JSON.parse(data);
@@ -116,6 +127,7 @@ var drawBox = function (data) {
     box.append($frag);
 }
 $(document).ready(function() {
+    utils.loginTesting();
     $.ajax({
         type: "POST",
         url:  utils.URLHead + "/signUpList",

@@ -51,7 +51,7 @@ var submit = function () {
             console.log(status);
             if(status == 201) {
                 $('.jq-notice-context').html('提交成功!');
-                setTimeout('window.location.href = "../index/page.html"',2000); 
+                setTimeout('window.location.href = "../list/page.html"',2000); 
             } else {
                 $('.jq-notice-context').html('提交失败!');
             }
@@ -59,8 +59,8 @@ var submit = function () {
     });
 }
 $(document).ready(function () {
+    utils.loginTesting();
     $(':file').filestyle({buttonText: "浏览"});
-
     $('.btn-submit').on('click', submit);
     $('#app-icon').on('change', function (event) {
         utils.fileUpload(utils.URLHead + '/works/uploadImgAndFile', 'app-icon')

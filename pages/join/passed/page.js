@@ -52,6 +52,7 @@ var drawBox = function (data) {
     box.append($frag);
 }
 $(document).ready(function() {
+    utils.loginTesting();
     $.ajax({
         type: "POST",
         url:  utils.URLHead + "/signUpList",

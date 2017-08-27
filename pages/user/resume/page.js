@@ -38,19 +38,25 @@ function submit(event) {
     var ajaxArgs = [];
     for (var i = 0; i < $('.write-tag').length; i++) {
         ajaxArgs.push({
-            userId: 1,
+            userId: utils.my_id,
             key: $('.write-tag').eq(i).val(),
             value: $('.box-text').eq(i).val(),
+            _method: 'POST'
         })
     }
-    log(ajaxArgs)
+    var args = {
+        ajaxArgs,
+    }
+    k = JSON.stringify(args);
+    log(k);
+
     $.ajax({
             type: "POST",
             beforeSend: $.notice('提示！', '正在提交...', function () {
                  utils.loading($('.jq-notice-context'));
             }),
             url: utils.URLHead + "/resume",
-            data: {body: ajaxArgs},
+            data: ajaxArgs,
             type: 'json',
             success: function(data){
                 if(typeof data == 'string') {
@@ -68,10 +74,11 @@ function submit(event) {
     
 }
 $(document).ready(function() {
+    utils.loginTesting();
     // 获取编辑内容
     $.ajax({
         type: 'GET',
-        url: utils.URLHead + '/resume/' + 1,
+        url: utils.URLHead + '/resume/' + utils.my_id,
         success: function(data){
             if(typeof data === 'string') {
                 data = JSON.parse(data);

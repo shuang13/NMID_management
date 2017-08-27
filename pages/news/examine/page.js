@@ -64,15 +64,19 @@ var examine = function(event) {
             function () {
                 var $context = $('.jq-notice-context');
                 // 参数
-                var ajaxArgs = {
-                    ids: $this.closest('tr').attr('data-id')
-                }
+                var id = $this.closest('tr').attr('data-id');
+                
                 $context.find('.true').on('click', function (event) {
                     event.preventDefault();
+                    var ajaxArgs = {
+                        ids: id,
+                    }
                     $.ajax({
                         type: "POST",
-                        url: utils.URLHead + '/news/ passNews',
-                        beforeSend: utils.loading($('.jq-notice-context')),
+                        url: utils.URLHead + '/news/passNews',
+                        beforeSend: $.notice('提示！', '正在提交...', function () {
+                            utils.loading($('.jq-notice-context'));
+                        }),
                         data: ajaxArgs,
                         success: function (data) {
                             if(typeof data == 'string') {
@@ -89,10 +93,18 @@ var examine = function(event) {
                 });
                 $context.find('.false').on('click', function () {
                     event.preventDefault();
+                    var ajaxArgs = {
+                        ids: id,
+                        _method: 'DELETE',
+                        uid: utils.my_id,
+                    }
                     $.ajax({
                         type: "POST",
                         url: utils.URLHead + '/news/' + ajaxArgs.ids,
-                        beforeSend: utils.loading($('.jq-notice-context')),
+                        data: ajaxArgs,
+                        beforeSend: $.notice('提示！', '正在提交...', function () {
+                            utils.loading($('.jq-notice-context'));
+                        }),
                         success: function (data) {
                             if(typeof data == 'string') {
                                 data = JSON.parse(data);
@@ -109,7 +121,7 @@ var examine = function(event) {
         );
     }
 $(document).ready(function () {
-
+    utils.loginTesting();
     $.ajax({
         type: "GET",
         beforeSend: utils.loading($('tbody')),

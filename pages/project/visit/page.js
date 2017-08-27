@@ -1,16 +1,12 @@
 var utils = new Utils();
-
-$(document).ready(function () {
+var init = function () {
+    utils.loginTesting();
     $(':file').filestyle({buttonText: "浏览"});
-    // 解析url中的id
-    id = window.location.href.split('?')[1].split('=')[1];
-    if (id == null) {
-        $.notice('项目查看：', '请在项目列表中选择查看项目！');
-        setTimeout(function () {
-            window.location.href = '../list/page.html';
-        }, 1000);
-        return ;
-    }
+    // 地址id   
+    window.id = utils.getUrlId();
+}
+$(document).ready(function () {
+    init();
     var $file_icon = $('#app-icon');
     var $member = $('#project-member');
     var $name = $('#project-name');
@@ -26,9 +22,6 @@ $(document).ready(function () {
     var $link = $('#app-link');
     var $submit = $('.btn-submit');
     var members = [];
-
-    $(':file').filestyle({buttonText: "浏览"});
-
     $.ajax({
         type: 'GET',
         url: utils.URLHead + '/works/' + id,

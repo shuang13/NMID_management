@@ -1,6 +1,7 @@
 var utils = new Utils();
 // 初始化
 function init() {
+    utils.loginTesting();
     // 上传文件按钮
     $(':file').filestyle({buttonText: "浏览"});
     // markdown编辑器
@@ -37,7 +38,7 @@ function submit(event) {
     }
     var tag_names = tags.join(",");
     var article = {
-        authorId: 1,
+        authorId: utils.my_id,
         profile: "dd",
         title: $('#blog-title').val(),
         platform: $('#blog-type').val(),

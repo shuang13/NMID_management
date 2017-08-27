@@ -34,12 +34,16 @@ var onDelete = function () {
                     event.preventDefault();
                     // 参数
                     var ajaxArgs = {
-                        id: $this.closest('tr').attr('data-id')
+                        newsId: $this.closest('tr').attr('data-id'),
+                        _method: 'DELETE',
+                        uid: utils.my_id,
                     }
                     $.ajax({
                         type: "POST",
-                        url: utils.URLHead + '/news/' + ajaxArgs.id,
-                        beforeSend: utils.loading($('.jq-notice-context')),
+                        url: utils.URLHead + '/news/' + ajaxArgs.newsId,
+                        beforeSend: $.notice('提示！', '正在提交...', function () {
+                            utils.loading($('.jq-notice-context'));
+                        }),
                         data: ajaxArgs,
                         success: function (data) {
                             if(typeof data == 'string') {
@@ -99,7 +103,7 @@ var pagination = function (totalPage) {
     });
 }
 $(document).ready(function () {
-
+    utils.loginTesting();
     $.ajax({
         type: "GET",
         beforeSend: utils.loading($('tbody')),

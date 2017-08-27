@@ -1,4 +1,10 @@
 var utils = new Utils();
+var init = function () {
+    utils.loginTesting();
+    $(':file').filestyle({buttonText: "浏览"});
+    // 地址id   
+    window.id = utils.getUrlId();
+}
 // 表单提交
 var submit = function () {
     event.preventDefault();
@@ -34,6 +40,7 @@ var submit = function () {
         // 可选参数
         support: $system.val(),
         instruction: $instruction.val(),
+        _method: 'PUT',
     };
 
     $.ajax({
@@ -51,7 +58,7 @@ var submit = function () {
             console.log(status);
             if(status == 201) {
                 $('.jq-notice-context').html('提交成功!');
-                setTimeout('window.location.href = "../index/page.html"',2000); 
+                setTimeout('window.location.href = "../list/page.html"',2000); 
             } else {
                 $('.jq-notice-context').html('提交失败!');
             }
@@ -60,16 +67,7 @@ var submit = function () {
 }
 
 $(document).ready(function () {
-    $(':file').filestyle({buttonText: "浏览"});
-    // 解析url中的id
-    id = window.location.href.split('?')[1].split('=')[1];
-    if (id == null) {
-        $.notice('项目更新：', '请在项目列表中选择更新项目！');
-        setTimeout(function () {
-            window.location.href = '../list/page.html';
-        }, 1000);
-        return ;
-    }
+    init();
     var $file_icon = $('#app-icon');
     var $member = $('#project-member');
     var $name = $('#project-name');
@@ -85,8 +83,6 @@ $(document).ready(function () {
     var $link = $('#app-link');
     var $submit = $('.btn-submit');
     var members = [];
-
-    $(':file').filestyle({buttonText: "浏览"});
 
     $.ajax({
         type: 'GET',

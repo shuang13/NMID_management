@@ -10,6 +10,7 @@ var parseData = function (data) {
         }
         formdata.push({
             "id": data[i].id,
+            "order-number": ((i + ((current-1)*16)) + 1),
             "name": data[i].name,
             "system": data[i].support,
             "authors": members.join('、'),
@@ -48,6 +49,7 @@ var pagination = function (totalPage) {
                         // 获取原始数据
                         var aaData = data.body.list;
                         var pageNum = data.body.num;
+                        window.current = current;
                         
                         console.log(aaData);
                     
@@ -63,7 +65,7 @@ var pagination = function (totalPage) {
     });
 }
 $(document).ready(function () {
-
+    utils.loginTesting();
     $.ajax({
         type: "GET",
         beforeSend: utils.loading($('tbody')),
@@ -77,7 +79,7 @@ $(document).ready(function () {
                 // 获取原始数据
                 var aaData = data.body.list;
                 var pageNum = Math.ceil(data.body.num / data.body.list.length);
-
+                window.current = 1;
                 // 数据解析
                 var new_data = parseData(aaData);
                                 

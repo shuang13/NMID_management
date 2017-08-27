@@ -1,10 +1,11 @@
 var utils = new Utils();
 $(document).ready(function() {
+    utils.loginTesting();
     // 按钮事件
     $('.btn-submit a').on('click', function(event) {
         event.preventDefault();
         var ajaxArgs = {
-            id: 1,
+            id: utils.my_id,
             old: $('#primary-password').val(),
             new: $('#new-password').val(),
         }

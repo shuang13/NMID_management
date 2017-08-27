@@ -60,7 +60,7 @@ var pagination = function (totalPage) {
     });
 }
 $(document).ready(function () {
-
+    utils.loginTesting();
     $.ajax({
         type: "GET",
         beforeSend: utils.loading($('tbody')),

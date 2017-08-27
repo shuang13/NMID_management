@@ -78,11 +78,12 @@ var onDelete = function (event) {
                     event.preventDefault();
                     // 参数
                     var ajaxArgs = {
-                        uid: id,
+                        _method: 'DELETE',
                     }
                     log(ajaxArgs)
-                    axios({
-                        method:"DELETE",
+                    $.ajax({
+                        type: "POST",
+                        data: ajaxArgs,
                         url: utils.URLHead + '/users/' + id,
                         success: function (data) {
                             if(typeof data == 'string') {
@@ -90,23 +91,11 @@ var onDelete = function (event) {
                             }
                             var status = data.code;
                             if (status == 200) {
-                                
+                                $('.jq-notice-context').html('删除成功!');
+                                setTimeout("location.reload()",1000); 
                             }
                         }
-                    });
-                    // $.ajax({
-                    //     type: "DELETE",
-                    //     url: utils.URLHead + '/users/' + id,
-                    //     success: function (data) {
-                    //         if(typeof data == 'string') {
-                    //             data = JSON.parse(data);
-                    //         }
-                    //         var status = data.code;
-                    //         if (status == 200) {
-                                
-                    //         }
-                    //     }
-                    // });    
+                    });    
                     
                 });
                 $context.find('.false').on('click', function () {
@@ -116,7 +105,7 @@ var onDelete = function (event) {
         );
 }
 $(document).ready(function () {
-
+    utils.loginTesting();
     $.ajax({
         type: "GET",
         beforeSend: utils.loading($('tbody')),

@@ -1,23 +1,19 @@
 var utils = new Utils();
- $(document).ready(function() {
+var init = function () {
+    utils.loginTesting();
     $(':file').filestyle({buttonText: "浏览"});
     // 富文本编辑器
     KindEditor.ready(function(K) {
         window.editor = K.create('#editor_id');
     });
-    // 解析url中的id
-    window.id = window.location.href.split('?')[1].split('=')[1];
-    if (id == null) {
-        $.notice('新闻编辑：', '请在项目列表中选择编辑新闻！');
-        setTimeout(function () {
-            window.location.href = '../list/page.html';
-        }, 1000);
-        return ;
-    }
+    // 地址id   
+    window.id = utils.getUrlId();
+}
+ $(document).ready(function() {
+    init();
     var $title = $('.news-title');
     var $save = $('.btn-save');
     var $submit = $('.btn-publish');
-
     
     $.ajax({
         type: 'GET',
@@ -31,7 +27,6 @@ var utils = new Utils();
             if (status == 200) {
                 $title.val(aaData.title);
                 editor.html(aaData.content);
-                log(aaData.content)
             }
             else $.notice("提示！", "服务器连接失败!");
         }
@@ -39,19 +34,23 @@ var utils = new Utils();
     // 立即上传
     $submit.on('click', function (event) {
         event.preventDefault();
-        //获取html内容，返回: 
-        var content = $('#editor_id').val();
         var article = {
-            uid: 1,
-            profile: '',
+            uid: utils.my_id,
+            newsId: id,
+            profile: 'dsf',
             title: $title.val(),
-            content: content,
+            content: 'sad',
+            _method: 'PUT',
+
         };
+        log(article)
 
         $.ajax({
                 type: "POST",
-                beforeSend: utils.loading($('tbody')),
-                url: utils.URLHead + "/news/" + id,
+                beforeSend: $.notice('提示！', '正在提交...', function () {
+                    utils.loading($('.jq-notice-context'));
+                }),
+                url: utils.URLHead + "/news/" + article.newsId,
                 data: article,
                 success: function(data){
                 if(typeof data == 'string') {

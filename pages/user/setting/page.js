@@ -2,7 +2,7 @@ var utils = new Utils();
  // 文件上传
 var fileUpload = function (URL, fileId, uid) {
     var ajaxArgs = {
-        uid: 2,
+        uid: utils.my_id,
         headImg: ''
     }
     $.ajaxFileUpload({
@@ -29,17 +29,15 @@ var fileUpload = function (URL, fileId, uid) {
     }); 
 }
 $(document).ready(function () {
+    utils.loginTesting();
     $(':file').filestyle({buttonText: "浏览"});
-    window.my_id = 2;
     $('#upload-pic').on('change', function (event) {
         utils.fileUpload(utils.URLHead + '/users/uploadHeadImg', 'upload-pic', my_id)
     });
-
-    
     // 获取用户信息
     $.ajax({
             type: "GET",
-            url: utils.URLHead + "/users/" + my_id,
+            url: utils.URLHead + "/users/" + utils.my_id,
             success: function (data) {
                 if(typeof data == 'string') {
                     data = JSON.parse(data);
@@ -65,12 +63,13 @@ $(document).ready(function () {
             tel: $('#user-telephone').val(),
             email: $('#user-email').val(),
             weibo: $('#user-weibo').val(),
-            introduction: $('#introduction').val(),
+            profile: $('#introduction').val(),
+            _method: 'PUT',
         };
        log(ajaxArgs)
         $.ajax({
             type: "POST",
-            url: utils.URLHead + "/users/" + my_id,
+            url: utils.URLHead + "/users/" + utils.my_id,
             beforeSend: $.notice('提示！', '正在提交...', function () {
                      utils.loading($('.jq-notice-context'));
                 }),

@@ -2,7 +2,8 @@ var log = console.log.bind(console)
 var Utils = function () {
     var utils = {
         URLHead: 'http:119.29.234.36:8080/nmid',
-
+        my_id: '',
+        my_role: ''
     }
 
     // 验证
@@ -30,50 +31,6 @@ var Utils = function () {
         }
         $table.find('tbody').empty().append($frag);
     }
-    // 删除
-    utils.delete = function (URL) {
-        event.preventDefault();
-        var $this = $(this);
-        $.notice('提示！', [
-            '<div class="discription_dialog">是否删除此栏目!</div>',
-            '<div class="divOperation">',
-                '<span class="true btn btn-danger">确认</span>',
-                '<span class="false btn btn-default">取消</span>',
-            '</div>'
-            ].join(''),
-            function () {
-                var $context = $('.jq-notice-context');
-                $context.find('.true').on('click', function (event) {
-                    event.preventDefault();
-                    // 参数
-                    var ajaxArgs = {
-                        id: $this.closest('tr').attr('data-id')
-                    }
-                    $.ajax({
-                        type: "POST",
-                        url: URL,
-                        beforeSend: user.loading($('.jq-notice-context')),
-                        data: ajaxArgs,
-                        success: function (data) {
-                            if(typeof data == 'string') {
-                                data = JSON.parse(data);
-                            }
-                            var status = data.code;
-                            if (status == 200) {
-                                $('.jq-notice-context').html('删除成功!');
-                                setTimeout("location.reload()",1000); 
-                            }
-                        }
-                    });    
-                    
-                });
-                $context.find('.false').on('click', function () {
-                    $.closeNotice();
-                });
-            }
-        );
-    }
-    
     
     // 加载图标
     utils.loading = function (element) {
@@ -97,6 +54,65 @@ var Utils = function () {
         }
         return id;
     }
+    // 获取登录状态
+    utils.getLoginState = function () {
+        var state = sessionStorage.getItem('my_id');
+        if(state) {
+            return JSON.parse(state);
+        } else {
+            return false;
+        }
+    }
+    // 设置登录状态
+    utils.setLoginState = function (userInfo) {
+        if(userInfo !== false) {
+            sessionStorage.setItem('my_id', userInfo.id);
+            sessionStorage.setItem('my_role', userInfo.role);
+        } else {
+            sessionStorage.removeItem('my_id');
+            sessionStorage.removeItem('my_role');
+        }
+    }
+    // 设置cookie
+    utils.setCookie = function (name,value) {
+        var Days = 30;
+        var exp = new Date();
+        exp.setTime(exp.getTime() + Days*24*60*60*1000);
+        document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+    }
+    
+    //读取cookies 
+    utils.getCookie = function (name) {
+        var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+        if(arr=document.cookie.match(reg))
+            return unescape(arr[2]);
+        else
+            return null;
+    }
+    //删除cookies 
+    utils.delCookie = function (name) {
+        var exp = new Date();
+        exp.setTime(exp.getTime() - 1);
+        var cval=getCookie(name);
+        if(cval!=null)
+            document.cookie= name + "="+cval+";expires="+exp.toGMTString();
+    }
+    // 地址跳转
+    utils.jumpUrl = function (url, time) {
+        setTimeout(function () {
+            window.location.href = url;
+        }, time)
+    }
+    utils.loginTesting = function () {
+        if (!utils.getLoginState) {
+            $.notice('提示！', '请进行用户登录，正在跳转登录页面...');
+            utils.jumpUrl('../../login/index/login.html', 2000);
+        } else {
+            utils.my_id = sessionStorage.getItem('my_id')
+            utils.my_role = sessionStorage.getItem('my_role')
+        }
+    }
+    
     return utils;
 }
 

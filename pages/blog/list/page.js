@@ -39,19 +39,22 @@ var onDelete = function () {
                     event.preventDefault();
                     // 参数
                     var ajaxArgs = {
-                        id: my_id,
+                        id: utils.my_id,
+                        _method: 'DELETE',
                     }
                     $.ajax({
                         type: "POST",
                         url: utils.URLHead + '/blogs/' + $this.closest('tr').attr('data-id'),
-                        beforeSend: utils.loading($('.jq-notice-context')),
+                        beforeSend: $.notice('提示！', '正在提交...', function () {
+                            utils.loading($('.jq-notice-context'));
+                        }),
                         data: ajaxArgs,
                         success: function (data) {
                             if(typeof data == 'string') {
                                 data = JSON.parse(data);
                             }
                             var status = data.code;
-                            if (status == 200) {
+                            if (status == 410) {
                                 $('.jq-notice-context').html('删除成功!');
                                 setTimeout("location.reload()",1000); 
                             }
@@ -77,7 +80,7 @@ var pagination = function (totalPage) {
             $.ajax({
                 type: "GET",
                 beforeSend: utils.loading($('tbody')),
-                url: utils.URLHead + "/blogs/" + my_id + "/myBlog",
+                url: utils.URLHead + "/blogs/" + utils.my_id + "/myBlog",
                 data: ajaxArgs,
                 success: function (data) {
                     if(typeof data == 'string') {
@@ -104,11 +107,11 @@ var pagination = function (totalPage) {
     });
 }
 $(document).ready(function () {
-    my_id = 1;
+    utils.loginTesting();
     $.ajax({
         type: "GET",
         beforeSend: utils.loading($('tbody')),
-        url: utils.URLHead + "/blogs/" + my_id + "/myBlog",
+        url: utils.URLHead + "/blogs/" + utils.my_id + "/myBlog",
         success: function(data){
             if(typeof data == 'string') {
                 data = JSON.parse(data);

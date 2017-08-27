@@ -1,8 +1,11 @@
 var utils = new Utils();
+
 // 初始化
 function init() {
+    utils.loginTesting();
     // 上传文件按钮
     $(':file').filestyle({buttonText: "浏览"});
+    log(utils.my_id)
     // 地址id   
     window.id = utils.getUrlId();
     // markdown编辑器
@@ -39,16 +42,19 @@ function submit(event) {
     }
     var tag_names = tags.join(",");
     var article = {
-        authorId: 1,
+        id: id,
+        authorId: utils.my_id,
         profile: "dd",
         title: $('#blog-title').val(),
         platform: $('#blog-type').val(),
         names: tag_names,
         content: content,
         time: Math.round(new Date().getTime()/1000),
+        _method: 'PUT',
+
     };
     $.ajax({
-            type: "PUT",
+            type: "POST",
             beforeSend: $.notice('提示！', '正在提交...', function () {
                 utils.loading($('.jq-notice-context'));
             }),
