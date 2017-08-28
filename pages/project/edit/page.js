@@ -109,6 +109,7 @@ $(document).ready(function () {
             else $.notice("提示！", "服务器连接失败!");
         }
     });
+    $('#upload-form-icon').attr('action', utils.URLHead + '/works/uploadImgAndFile')
     // 文件上传
     $('#app-icon').on('change', function (event) {
         $('.project-id').val(id)
@@ -125,6 +126,7 @@ $(document).ready(function () {
         
 
     });
+    $('#upload-form-screenshot').attr('action', utils.URLHead + '/works/uploadImgAndFile')
     $('#app-screenshot').on('change', function (event) {
         $('.project-id').val(id)
         $('#upload-form-screenshot').ajaxSubmit(function(message) {
@@ -137,6 +139,7 @@ $(document).ready(function () {
             else $.notice("提示！", "服务器连接失败!");
         }); 
     });
+    $('#upload-form-app').attr('action', utils.URLHead + '/works/uploadImgAndFile')
     $('#app-upload').on('change', function (event) {
         $('.project-id').val(id)
         $('#upload-form-app').ajaxSubmit(function(message) {

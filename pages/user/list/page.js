@@ -39,7 +39,7 @@ var pagination = function (totalPage) {
                     if(typeof data == 'string') {
                         data = JSON.parse(data);
                     }
-                    var status = data.code;//状态码
+                    var status = data.code;
                     if (status == 200) {
                         // 获取原始数据
                         var aaData = data.body.list;

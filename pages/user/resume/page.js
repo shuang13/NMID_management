@@ -4,10 +4,11 @@ function addTag(event) {
     var length = $('.tag-box').children('li').length;
     // 标签最多10个，超过10个无法再添加
     if (length <= 11) {
-        $('.tag-box').append($('<li>' +
-                        '<input class="write-tag" type="text" placeholder="填写标签"/>' +
-                        '<a href="##" class="delete-tag"><i class="fa fa-minus-circle"></i></a>' +
-                    '</li>'));
+        $('.tag-box').append($(
+            '<li>' +
+                '<input class="write-tag" type="text" placeholder="填写标签"/>' +
+                '<a href="##" class="delete-tag"><i class="fa fa-minus-circle"></i></a>' +
+            '</li>'));
 
     }else {
         $.notice('提示！','标签最多只能添加10个！');
@@ -41,14 +42,13 @@ function submit(event) {
             userId: utils.my_id,
             key: $('.write-tag').eq(i).val(),
             value: $('.box-text').eq(i).val(),
-            _method: 'POST'
         })
     }
     var args = {
-        ajaxArgs,
+        resumeList: ajaxArgs
     }
     k = JSON.stringify(args);
-    log(k);
+    log(ajaxArgs);
 
     $.ajax({
             type: "POST",
@@ -56,8 +56,7 @@ function submit(event) {
                  utils.loading($('.jq-notice-context'));
             }),
             url: utils.URLHead + "/resume",
-            data: ajaxArgs,
-            type: 'json',
+            data: args,
             success: function(data){
                 if(typeof data == 'string') {
                     data = JSON.parse(data);

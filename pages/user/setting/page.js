@@ -3,9 +3,22 @@ var utils = new Utils();
 $(document).ready(function () {
     utils.loginTesting();
     $(':file').filestyle({buttonText: "浏览"});
+    $('#upload-form').attr('action', utils.URLHead + '/users/uploadHeadImg')
+
     $('#upload-pic').on('change', function (event) {
         $('#upload-uid').val(utils.my_id)
-        $('#upload-form').submit();
+        $('#upload-form').ajaxSubmit(function(message) {
+            var status = message.code;
+            if (status == 200) {
+                $.notice('提示！', '文件上传成功');
+                setTimeout('window.location.href = "../setting/page.html"',2000); 
+                
+            }
+            else {
+                $.notice("提示！", "服务器连接失败!");
+                setTimeout('window.location.href = "../setting/page.html"',2000); 
+            }
+        }); 
     });
     // 获取用户信息
     $.ajax({

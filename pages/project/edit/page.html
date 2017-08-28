@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../../../lib/notice/css/jquery.notice.css">
     <!-- jq -->
     <script src="../../../lib/jq/jquery.min.js"></script>
-    <script src="http://malsup.github.io/jquery.form.js"></script>
+    <script src="../../../lib/jq/jquery.form.js"></script>
 
 </head>
 <body>
@@ -29,7 +29,7 @@
         <div id="sidebar">
             <div class="user-image">
                 <i></i>
-                <p class="name">张延伟</p>
+                <p class="name"></p>
             </div>
             <ul class="sidebar-nav">
                 <li>
@@ -73,21 +73,21 @@
                 </ul>
                 <div class="main">
                     <div class="form-file-box">
-                        <form id="upload-form-icon" enctype="multipart/form-data" action="http:119.29.234.36:8080/nmid/works/uploadImgAndFile" method="post">
+                        <form id="upload-form-icon" enctype="multipart/form-data" action="" method="post">
                             <div class="input-box">
                                 <div class="box-title">应用图标</div>
                                 <input type="file" id="app-icon" name="logo"/>
                                 <input type="hidden" class="project-id" name='id'>
                             </div>
                         </form>
-                        <form id="upload-form-screenshot" enctype="multipart/form-data" action="http:119.29.234.36:8080/nmid/works/uploadImgAndFile" method="post">
+                        <form id="upload-form-screenshot" enctype="multipart/form-data"  method="post">
                             <div class="input-box">
                                 <div class="box-title">产品截图</div>
                                 <input type="file" id="app-screenshot" name="illustration"/>
                                 <input type="hidden" class="project-id" name='id'>
                             </div>
                         </form>
-                        <form id="upload-form-app" enctype="multipart/form-data" action="http:119.29.234.36:8080/nmid/works/uploadImgAndFile" method="post">
+                        <form id="upload-form-app" enctype="multipart/form-data" method="post">
                             <div class="input-box">
                                 <div class="box-title">应用上传</div>
                                 <input type="file" id="app-upload" name="links"/>

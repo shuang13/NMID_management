@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../../../lib/notice/css/jquery.notice.css">
     <!-- jq -->
     <script src="../../../lib/jq/jquery.min.js"></script>
+    <script src="../../../lib/jq/jquery.form.js"></script>
 </head>
 <body>
     <!-- 顶栏 -->
@@ -27,7 +28,7 @@
         <div id="sidebar">
             <div class="user-image">
                 <i></i>
-                <p class="name">张延伟</p>
+                <p class="name"></p>
             </div>
             <ul class="sidebar-nav">
                 <li>
@@ -73,10 +74,13 @@
                     <div class="infor-setting">
                         <input type="text" placeholder="标题" class="news-title"/>
                     </div>
-                    <div class="file-upload-box news-file">
+                    <form id="upload-form" enctype="multipart/form-data" method="post">
+                        <div class="file-upload-box news-file">
                         <label for="upload-pic">图片上传</label>
-                        <input type="file" id="upload-pic" name="upload-pic"/>
-                    </div>
+                            <input type="file" id="upload-pic" name="illustration"/>
+                            <input type="hidden" class="upload-id" name='id'>
+                        </div>
+                    </form>
                     <!-- 加载编辑器的容器 -->
                     <div class="editor-box">
                         <textarea id="editor_id" name="content">

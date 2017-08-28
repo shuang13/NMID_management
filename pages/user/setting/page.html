@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../../../lib/notice/css/jquery.notice.css"> 
     <!-- jq -->
     <script src="../../../lib/jq/jquery.min.js"></script>
+    <script src="../../../lib/jq/jquery.form.js"></script>
+
 </head>
 <body>
     <!-- 顶栏 -->
@@ -26,7 +28,7 @@
     <div id="sidebar">
         <div class="user-image">
             <i></i>
-            <p class="name">张延伟</p>
+            <p class="name"></p>
         </div>
         <ul class="sidebar-nav">
             <li class="active">
@@ -75,8 +77,8 @@
                     <!-- 修改个人资料 -->
                     <div class="information-setting">
                         <p>修改个人资料</p>
-                        <img alt="头像预览" class="head-view" />
-                        <form id="upload-form" enctype="multipart/form-data" action="http:119.29.234.36:8080/nmid/users/uploadHeadImg" method="post">
+                        <img alt="图片加载中..." class="head-view" />
+                        <form id="upload-form" enctype="multipart/form-data" method="post">
                             <div class="input-box">
                                 <input type="file" id="upload-pic" name="headImg">
                                 <input type="hidden" id="upload-uid" name='uid'>

@@ -27,7 +27,7 @@
     display: block;
     width: 130px;
     height: 130px;
-    background: url(../image/user.png) center no-repeat;
+    background: #fff;
 }
 /*侧栏用户设置*/
 .sidebar-nav li:nth-child(1) i {

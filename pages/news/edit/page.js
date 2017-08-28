@@ -27,6 +27,23 @@ var init = function () {
             if (status == 200) {
                 $title.val(aaData.title);
                 editor.html(aaData.content);
+                $('#upload-form').attr('action', utils.URLHead + '/news/' + id + '/illustration')
+                
+                $('#upload-pic').on('change', function (event) {
+                    $('#upload-id').val(id);
+                    $('#upload-form').ajaxSubmit(function(message) {
+                        var status = message.code;
+                        log(data)
+                        if (status == 200) {
+                            $.notice('提示！', '文件上传成功');
+                            setTimeout($.closeNotice,2000); 
+                        }
+                        else {
+                            $.notice("提示！", "服务器连接失败!");
+                            setTimeout($.closeNotice,2000); 
+                        }
+                    }); 
+                });
             }
             else $.notice("提示！", "服务器连接失败!");
         }
