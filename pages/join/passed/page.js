@@ -49,6 +49,9 @@ var drawBox = function (data) {
 }
 $(document).ready(function() {
     utils.loginTesting();
+    var ajaxArgs = {
+        type：'pass',
+    }
     $.ajax({
         type: "POST",
         url:  utils.URLHead + "/signUpList",
