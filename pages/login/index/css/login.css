@@ -6,7 +6,7 @@ body {
     background-color: #F3F3F3;
 }
 .container {
-    border-top: 5px solid #2DBE60;
+    border-top: 5px solid #00a0e9;
 }
 .login-page {
     position: relative;
@@ -64,7 +64,7 @@ body {
     border-radius: 10px;
     font-size: 20px;
     color: #fff;
-    background-color: #2DBE60;
+    background-color: #00a0e9;
     cursor: pointer;
     transition: background-color 0.5s; 
     -moz-transition:  background-color 0.5s;
@@ -72,7 +72,7 @@ body {
     -o-transition:  background-color 0.5s;
 }
 .login-submit:hover {
-    background-color: #28A956;
+    background-color: #0B72E3;
 
 }
 .fa-refresh {

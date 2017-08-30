@@ -6,6 +6,7 @@ var pagination = function (totalPage) {
         callback: function(current) {
             var ajaxArgs = {
                 page: current,
+                type:'111'
             };
             $.ajax({
                 type: "POST",
@@ -50,11 +51,12 @@ var drawBox = function (data) {
 $(document).ready(function() {
     utils.loginTesting();
     var ajaxArgs = {
-        type：'pass',
+        type:'111'
     }
     $.ajax({
         type: "POST",
         url:  utils.URLHead + "/signUpList",
+        data: ajaxArgs,
         success: function (data) {
             if(typeof data == 'string') {
                 data = JSON.parse(data);
