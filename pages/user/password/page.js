@@ -1,4 +1,12 @@
 var utils = new Utils();
+// 本页面表单验证
+function validate(ajaxArgs) {
+    if ($.trim(ajaxArgs.old).length < 6) {
+        $.notice("提示！", "密码不得少于6位！");
+        return false;
+    }
+    return true;
+}
 $(document).ready(function() {
     utils.loginTesting();
     // 按钮事件
@@ -9,7 +17,9 @@ $(document).ready(function() {
             old: $('#primary-password').val(),
             new: $('#new-password').val(),
         }
-        log(ajaxArgs)
+        if(!utils.validateEmpty(ajaxArgs) || !validate(ajaxArgs)) {
+            return false;
+        }
         $.ajax({
                 type: "POST",
                 beforeSend: $.notice('提示！', '正在提交...', function () {

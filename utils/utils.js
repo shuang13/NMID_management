@@ -1,7 +1,7 @@
 var log = console.log.bind(console)
 var Utils = function () {
     var utils = {
-        URLHead: 'http:/202.202.43.205',
+        URLHead: '',
         my_id: '',
         my_role: ''
     }

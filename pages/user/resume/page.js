@@ -33,22 +33,9 @@ function deleteTag(event) {
     }
     $.ajax({
         type: "POST",
-        beforeSend: $.notice('提示！', '正在提交...', function () {
-             utils.loading($('.jq-notice-context'));
-        }),
         url: utils.URLHead + "/resume/" + rid,
         data: ajaxArgs,
         success: function(data){
-            if(typeof data == 'string') {
-                data = JSON.parse(data);
-            }
-            var status = data.code;
-            if(status == 200) {
-            $('.jq-notice-context').html('提交成功!');
-                setTimeout("location.reload()",1000);; 
-            } else {
-                $('.jq-notice-context').html('提交失败!');
-            }
         }
     });
     $('.input-box').eq(index).remove();
