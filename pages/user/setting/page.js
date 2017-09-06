@@ -1,5 +1,24 @@
 var utils = new Utils();
-
+// 本页面表单验证
+function validate(ajaxArgs) {
+	regName = /^[\u4e00-\u9fa5]{2,4}$/;//姓名
+	var regEmail = /^\w+(\.\w+)*@\w+(\.\w+)+$/,//邮箱
+	regMobile = /^0?1[3|4|5|8][0-9]\d{8}$/;//手机
+	
+	if (!regName.test(ajaxArgs.name)) {
+        $.notice("提示！", "请输入正确格式的姓名!");
+        return false;
+    }
+    else if (!regEmail.test(ajaxArgs.email)) {
+        $.notice("提示！", "请输入正确格式的邮件地址!");
+        return false;
+    }
+    else if (!regMobile.test(ajaxArgs.tel)) {
+        $.notice("提示！", "请输入正确格式的电话号码!");
+        return false;
+    }
+    return true;
+}
 $(document).ready(function () {
     utils.loginTesting();
     $(':file').filestyle({buttonText: "浏览"});

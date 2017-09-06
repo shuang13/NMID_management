@@ -1,7 +1,7 @@
 var utils = new Utils();
 // 本页面表单验证
 function validate(ajaxArgs) {
-    if ($.trim(ajaxArgs.old).length < 6) {
+    if ($.trim(ajaxArgs.old).length < 6 || $.trim(ajaxArgs.new).length < 6) {
         $.notice("提示！", "密码不得少于6位！");
         return false;
     }
