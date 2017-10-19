@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>名片制作</title>
+    <style class="fox_global_style">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #nmid_card {
+            margin: 0 auto;
+            width: 370px;
+            z-index: 999;
+        }
+        #nmid_card_view {
+            border: 1px solid #000;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+       
+        .edit_option {
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        .edit_option label {
+            display: block;
+            line-height: 25px;
+        }
+        .edit_option input, .edit_option select {
+            width: 300px;
+            padding: 6px 8px;
+            font-size: 14px;
+            line-height: 20px;
+            vertical-align: middle;
+            border: 1px solid #d1d5da;
+            border-radius: 3px;
+            outline: none;
+            box-shadow: inset 0 1px 2px rgba(27,31,35,0.075);
+            background-color: #fafbfc;
+        }
+        .edit_option input:focus, .edit_option select:focus {
+            background: #fff;
+        }
+        .edit_option select {
+            width: 317px;
+        }
+        #nmid_card_code {
+            margin-top: 50px;
+            border: 1px solid #000;
+            width: 100%;
+            height: 250px;
+            word-wrap:break-word ;
+        }
+        #pinyin_error {
+            margin-top: 10px;
+        }
+        #edit_weibo {
+            width: 50px;
+        }
+        #edit_weibo_url {
+            width: 228px;
+        }
+        #edit_mail {
+            width: 132px;
+        }
+        #edit_mail_name {
+            width: 164px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="nmid_card">
+        <div id="nmid_card_view">
+            <div style="overflow: hidden;">
+                <div id="nmid_card_logo" style="float: left;padding: 10px;">
+                    <img src="http://nmid.cqupt.edu.cn/uploads/opus/14517296121395.png" style="height: 80px;width: 92px;overflow: hidden;">
+                </div> 
+                <div id="nmid_card_content" style="float: left;padding-top: 10px;padding-left: 15px;font-size: 14px;font-family: 幼圆,黑体;"> 
+                    <div id="nmid_card_name">
+                        <b style="font-size: 18px;font-family: 黑体;padding-right: 10px;">XXXX</b><span>(XXX XXX)</span>
+                    </div> 
+                    <div id="nmid_card_platform">
+                        <b style="font-size: 14px;padding-right: 10px;">(XXX)</b> 
+                    </div>
+                    <div>
+                        <span style="font-size: 14px; padding-top: 10px; display:  block">重邮 移动互联网应用工程研究中心 
+                            <br>
+                            <span style="font-size: 12px; font-family: Arial; line-height: 98%">Nexuslink of Mobile Internet Development</span> 
+                        </span>
+                    </div> 
+                    <div id="nmid_card_contact" style="font-family: Arial;padding-top: 10px;">
+                        <span id="nmid_card_phone">Tel: +86 <span>XXXXXXXX</span></span> 
+                        <br>
+                        <span id="nmid_card_mail">
+                            E-mail: <a href="##" style="text-decoration: none;color:#000;">XXXXXXXX</a>
+                        </span>
+                        <br>
+                        <span id="nmid_card_url">
+                            Page: <a href="http://nmid.cqupt.edu.cn/" style="text-decoration: none;color:#000;">http://nmid.cqupt.edu.cn/</a>
+                        </span>
+                        <br>
+                        <span id="nmid_card_weibo">
+                            Weibo: <a href="##" style="text-decoration: none;color:#000;">XXXXXXXX</a>
+                        </span>
+                    </div>
+                </div>
+            </div>  
+        </div>
+        <div id="nmid_card_edit">
+            <div class="edit_option">
+                <label for="edit_name">姓名：</label>
+                <input type="text" id="edit_name">
+            </div>
+            <div class="edit_option">
+                <label for="edit_pinyin">拼音：</label>
+                <input type="text" id="edit_pinyin">
+            </div>
+            <div class="edit_option">
+                <label for="edit_platform">平台：</label>
+                <select id="edit_platform">
+                    <option value="未选择" selected="selected">==未选择==</option>
+                    <option value="服务器平台">服务器平台</option>
+                    <option value="客户端平台">客户端平台</option>
+                    <option value="硬件平台">硬件平台</option>
+                    <option value="培训生平台">培训生平台</option>
+                    <option value="运营专责/硬件平台">运营专责/硬件平台</option>
+                    <option value="运营专责/客户端平台">运营专责/客户端平台</option>
+                    <option value="运营专责/服务器平台">运营专责/服务器平台</option>
+                    <option value="运营专责/首席">运营专责/首席</option>
+                </select>
+            </div>
+            <div class="edit_option">
+                <label for="edit_phone">电话：</label>
+                <input type="text" id="edit_phone">
+                
+            </div>
+            <div class="edit_option">
+                <label for="edit_mail">邮箱：</label>
+                <input type="text" id="edit_mail_name">
+                <select id="edit_mail">
+                    <option value="未选择" selected="selected">==未选择==</option>
+                    <option value="@nexuslink.cn">@nexuslink.cn</option>
+                    <option value="@foxmail.com">@foxmail.com</option>
+                </select>
+                
+            </div>
+            <div class="edit_option">
+                <label for="edit_url">主页：</label>
+                <input type="text" id="edit_url" value="http://nmid.cqupt.edu.cn/">
+                
+            </div>
+            <div class="edit_option">
+                <label for="edit_weibo">微博：</label>
+                <input type="text" id="edit_weibo" placeholder="用户名">
+                <input type="text" id="edit_weibo_url" placeholder="地址">
+                
+            </div>
+            
+
+        </div> 
+        <br>
+                <button id="edit_submit">生成代码</button>
+                <button id="edit_copy">复制代码</button>
+                <br>
+                <!-- <input id="add_name" type="text" placeholder="名称">
+                <input id="add_id" type="text" placeholder="ID">
+                <button id="edit_add">添加</button> -->
+
+        <textarea type="textarea" id="nmid_card_code"></textarea>
+    </div>
+    <script type="text/javascript" src="./lib/pinyin/pinyin_dict_notone.js"></script>
+    <script type="text/javascript" src="./lib/pinyin/pinyinUtil.js"></script>
+    <script>
+        const e = element => document.querySelector(element)
+        var log = console.log.bind(console)
+        // 首字母大写
+        var replaceStr = function (str){ 
+            str = str.toLowerCase();
+            var reg = /\b(\w)|\s(\w)/g; 
+            return str.replace(reg,function(m){ 
+                return m.toUpperCase()
+            });
+        }
+            
+        var addInput = function (name, id, afterElement) {
+            var o = document.createElement("div")
+            o.className = 'edit_option'
+            o.innerHTML = '<label for="' + id + '">' + name  + ':</label>' +
+                '<input type="text" id="' + id + '">' 
+            e('#nmid_card_edit').appendChild(o)
+        }
+        // event
+        e('#edit_name').addEventListener('input', function (event) {
+            e('#nmid_card_name b').innerHTML = event.target.value
+            var p = pinyinUtil.getPinyin(event.target.value)
+            e('#edit_pinyin').value = p
+            e('#nmid_card_name span').innerHTML = '(' + replaceStr(p) +  ')'
+        })
+        e('#edit_pinyin').addEventListener('input', function (event) {
+            var p = e('#edit_pinyin').value
+            e('#nmid_card_name span').innerHTML = '(' + replaceStr(p) +  ')'
+        })
+        e('#edit_platform').addEventListener('input', function (event) {
+            e('#nmid_card_platform b').innerHTML = '(' + event.target.value + ')'
+        })
+        e('#edit_phone').addEventListener('input', function (event) {
+            var phoneNum = event.target.value
+            
+            e('#nmid_card_phone span').innerHTML = phoneNum.replace(/(^\d{3}|\d{4}\B)/g,"$1 ")
+
+        })
+        e('#edit_mail').addEventListener('input', function (event) {
+            e('#nmid_card_mail a').innerHTML = e('#edit_mail_name').value + e('#edit_mail').value 
+            e('#nmid_card_mail a').href =  'mailto:' + e('#edit_mail_name').value + e('#edit_mail').value 
+        })
+        e('#edit_mail_name').addEventListener('input', function (event) {
+            e('#nmid_card_mail a').innerHTML = e('#edit_mail_name').value + e('#edit_mail').value 
+            e('#nmid_card_mail a').href =  'mailto:' + e('#edit_mail_name').value + e('#edit_mail').value 
+        })
+        e('#edit_url').addEventListener('input', function (event) {
+            e('#nmid_card_url a').innerHTML = event.target.value
+            e('#nmid_card_url a').href =  event.target.value
+
+        })
+        e('#edit_weibo_url').addEventListener('input', function (event) {
+            e('#nmid_card_weibo a').href = event.target.value
+        })
+        e('#edit_weibo').addEventListener('input', function (event) {
+            e('#nmid_card_weibo a').innerHTML = '@' + event.target.value
+        })
+        
+        e('#edit_submit').addEventListener('click', function (event) {
+            var htmlData =  e('#nmid_card_view').innerHTML
+            htmlData = htmlData.replace(/[\r\n]/g,"")
+            e('#nmid_card_code').value = htmlData 
+        })
+        e('#edit_copy').addEventListener('click', function (event) {
+            e('#nmid_card_code').select()
+            document.execCommand("Copy")
+        })
+        // e('#edit_add').addEventListener('click', function (event) {
+        //     var name = e('#add_name').value
+        //     var id = e('#add_id').value
+        //     addInput(name, id)
+        // })
+    </script>
+    <script src="lib/canvas-nest.js" opacity=".7" zIndex="-1" count="80"></script>
+</body>
+</html>
