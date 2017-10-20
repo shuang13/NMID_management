@@ -11,7 +11,7 @@ $(document).ready(function() {
             '@foxmail.com',
         ],
         width: 235,
-        height: 120,
+        height: 65,
     });
     // enter键登录   
     $(document).keyup(function(event) {

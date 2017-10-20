@@ -1,7 +1,7 @@
 var utils = new Utils();
 
 // 解析表格数据
-var parseData = function (data) {
+var parseData = function(data) {
     var formdata = [{
         "id": data.id,
         "name": data.name,
@@ -9,20 +9,20 @@ var parseData = function (data) {
         "role": data.role,
         "platform": data.platform,
         "job": data.job,
-        "last-login": data.last_login_time
+        "last-login": utils.getdate(data.last_login_time),
     }]
     return formdata;
 
 }
 
-$(document).ready(function () {
+$(document).ready(function() {
     utils.loginTesting();
     $.ajax({
         type: "GET",
         beforeSend: utils.loading($('tbody')),
         url: utils.URLHead + "/users/" + utils.my_id,
-        success: function(data){
-            if(typeof data == 'string') {
+        success: function(data) {
+            if (typeof data == 'string') {
                 data = JSON.parse(data);
             }
             var status = data.code;

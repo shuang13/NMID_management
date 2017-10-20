@@ -19,6 +19,6 @@
     list-style: none;
 }
 .selector-box .active {
-    background: #eee;
+    background: #DDC;
     cursor: pointer;
 }
