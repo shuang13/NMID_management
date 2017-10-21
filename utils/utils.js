@@ -143,6 +143,7 @@ var Utils = function() {
         }
         // 暂时隐藏消息功能
         // $('.top-nav').remove();
+        // 注销
         $('.top-nav').empty().html('<li class="sign-out">退出</li>');
         $('.sign-out').on('click', function() {
             $.ajax({
